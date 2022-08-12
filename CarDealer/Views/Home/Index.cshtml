@@ -1,0 +1,2056 @@
+﻿@model CarDealer.ViewModels.VMHome
+@{
+
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Listing &#8211; MaxWheels &#8211; Just another WordPress site</title>
+    <meta name='robots' content='max-image-preview:large'>
+
+
+
+
+    <link rel='dns-prefetch' href='//fonts.googleapis.com'>
+    <link rel='dns-prefetch' href='//s.w.org'>
+    <link rel="alternate" type="application/rss+xml" title="Listing - MaxWheels &raquo; Feed" href="feed/index.htm">
+    <link rel="alternate" type="application/rss+xml" title="Listing - MaxWheels &raquo; Comments Feed" href="comments/feed/index.htm">
+    <link rel='stylesheet' id='wp-block-library-css' href='~/templatefiles/wp-includes/css/dist/block-library/style.min.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='wc-blocks-vendors-style-css' href='~/templatefiles/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=7.4.3' media='all'>
+    <link rel='stylesheet' id='wc-blocks-style-css' href='~/templatefiles/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=7.4.3' media='all'>
+    <style id='global-styles-inline-css'>
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+            --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+            --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+            --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+            --wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+            --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+            --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+            --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+    </style>
+    <link rel="stylesheet" id='extendify-gutenberg-patterns-and-templates-utilities-inline-css' href="~/templatefiles/xiyar.css">
+    <link rel='stylesheet' id='socialsnap-styles-css' href='~/templatefiles/wp-content/plugins/socialsnap/assets/css/socialsnap.css?ver=1.1.17' media='all'>
+
+    <link rel='stylesheet' id='contact-form-7-css' href='~/templatefiles/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.5.6.1' media='all'>
+    <link rel='stylesheet' id='woocommerce-layout-css' href='~/templatefiles/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=6.5.1' media='all'>
+    <link rel='stylesheet' id='woocommerce-smallscreen-css' href='~/templatefiles/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=6.5.1' media='only screen and (max-width: 768px)'>
+    <link rel='stylesheet' id='woocommerce-general-css' href='~/templatefiles/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=6.5.1' media='all'>
+    <style id='woocommerce-inline-inline-css'>
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
+    </style>
+    <link rel='stylesheet' id='leaflet-css' href='~/templatefiles/wp-content/plugins/maxwheels-framework/libs/css/leaflet.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='flexslider-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/plugins/flexslider.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='fancybox-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/plugins/jquery.fancybox.min.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='ntlTelInput-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/plugins/intlTelInput.min.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='swiper-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/plugins/swiper.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='animate-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/plugins/animate.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='ntlTelInput-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/plugins/intlTelInput.min.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='maxwheels-style-css' href='~/templatefiles/wp-content/themes/maxwheels/style.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='google-fonts-css' href='css2?family=Lato%3Aital%2Cwght%400%2C400%3B0%2C700%3B0%2C900%3B1%2C400%3B1%2C700&#038;display=swap&#038;ver=1' media='all'>
+    <link rel='stylesheet' id='bootstrap-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/bootstrap.min.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='maxwheels-icons-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/theme-fonts.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='plugins-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/plugins.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='maxwheels-main-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/theme.css?ver=6.0.1' media='all'>
+    <style id='maxwheels-main-inline-css'>
+        .sb-header.header-minimal {
+            background: #FFFFFF;
+        }
+
+        .badge-label-79 {
+            background-color: #81d742;
+        }
+
+        .badge-label-80 {
+            background-color: #8224e3;
+        }
+
+        .sb-header.make-me-trans .sb-menu ul li a,
+        .sb-header.nhome-3.make-me-trans .call-us .call-text p,
+        .sb-header.nhome-3.make-me-trans .call-us .call-text h3 {
+            color: #ffffff;
+        }
+
+        .badge-type-308 {
+            background-color: #14cea9;
+        }
+
+        .badge-type-306 {
+            background-color: #1e73be;
+        }
+
+        .badge-type-309 {
+            background-color: #157201;
+        }
+
+        .badge-type-307 {
+            background-color: #84410e;
+        }
+
+        .full-brdc .newbrd ol li.clr-yal,
+        .blog-read-more a,
+        .blog-section-2 .blog-inner-box .blog-lower-box h2 a:hover,
+        .blog-sidebar .widget ul li a:hover,
+        .header-2 .sb-menu ul li.current-menu > a,
+        .header-1 .sb-menu ul li:hover > a,
+        .full-brdc .newbrd ol li a:hover,
+        blockquote::after,
+        .ag-about .about-content .cal-action ul li i,
+        .ag-about .about-content .cal-action ul li.border-li span,
+        .clr-theme,
+        .sec-heading p,
+        .ag-about .about-content p.mytag,
+        .ag-hero .search-data .search-box .search-inner label,
+        .dark-footer .list li i,
+        .card.ad-card-4 .list-inline .list-inline-item .clr-yal,
+        .prop-location .clr-yal,
+        .upper-contain .clr-yal,
+        .w-exp .list-unstyled .list-inline-item .clr-blu,
+        .property-data .text-inner p .clr-yal,
+        .property-data .ul-text li a,
+        .property-data .text-inner .main-reg-price,
+        .cat-type-img .cat-type-title h4 a:hover,
+        ul.category-list-data li a:hover,
+        .card-agent-4 .card-body .card-title:hover,
+        .card-agent-4 .card-body .agent-info ul li i,
+        .card.agent-1 .clr-yal,
+        .type-3-box a:hover,
+        .clr-yal,
+        .property-meta-relative .item-price,
+        .card.ad-card-7 .property-meta-relative .item-price,
+        .card.card-agent-2 .category,
+        .packages-grid-content p,
+        .packages-price,
+        a.clr-black:hover,
+        .view-detail .detail-button a:hover strong,
+        .btn-outline,
+        .pointer,
+        .custom-card-board .card-board-icon,
+        .main-home-sec7 .hading p.app-tag,
+        .cou h3,
+        .woocommerce .product-selling-price,
+        .woocommerce .shop-sidebar .shop-widget .woocommerce-Price-amount,
+        .woocommerce .mw-shop-detial .shopping-cart-items .card .woocommerce-Price-amount,
+        .woocommerce .mw-shop-detial p.price .woocommerce-Price-amount,
+        .woocommerce .mw-shop-detial .woocommerce-variation-price span.price,
+        .wcmp-main-section .product-selling-price,
+        .wcmp-main-section .column-class aside.widget .product_list_widget li .woocommerce-Price-amount,
+        #wcmp-store-conatiner .wcmp-store-list-wrap.list-3 .wcmp-vendor-details .wcmp-topProduct,
+        .addr li a,
+        .footer-sec .widget-latest-posts .product-selling-price,
+        .agency-1 .agent-detail a:hover,
+        .body-types-makes:hover .mk-head h3,
+        .max-bodytype14-box a:hover,
+        .compare-price,
+        .lisd-link:hover,
+        .user-profile-information ul.profile-info li a:hover,
+        .contact-us ul li a:hover,
+        .dealer-author .author-content h4 a:hover,
+        .max-home-detail-list .max-home-list-details h3 a:hover,
+        .blog-grids .entry-body .cat,
+        .blog-grids .entry-body h3 a:hover,
+        .listing-data .selling-price span,
+        .card.ad-card-7 .selling-price span,
+        .user-menu__new-account a:hover,
+        .testimonial-4 span,
+        .site-info__item svg,
+        .clr-blu {
+            color: #FF7700 !important;
+        }
+
+        .header-1 .sb-menu ul li > a {
+            color: #1B232F;
+        }
+
+        .btn-theme {
+            color: #FFFFFF !important;
+        }
+
+        .max-hero9-form {
+            border-top: 4px solid #FF7700;
+        }
+
+        .header-minimal .sb-menu ul li > a {
+            color: #1B232F;
+        }
+
+        .mw-breads {
+            background: #EDEFF8 !important;
+        }
+
+        .svg-icon path,
+        .svg-icon polygon,
+        .svg-icon rect {
+            fill: #FF7700 !important;
+        }
+
+        .woocommerce .mw-shop-detial div.product .woocommerce-tabs ul.tabs li.active a,
+        .mw-dealers-tag .nav-tabs .nav-item.show .nav-link,
+        .mw-dealers-tag .nav-tabs .nav-link.active {
+            border-top: 3px solid #FF7700 !important;
+        }
+
+        .svg-icon circle {
+            stroke: #FF7700 !important;
+        }
+
+        .homebg-top2 .nav-tabs .nav-link.active,
+        .stv-radio-button:checked + label,
+        .filters-nav li button.active-grid {
+            background: #FF7700;
+            border-color: #FF7700;
+        }
+
+        .woocommerce ul.products .mw-product-grid:hover .btn-outline-custom,
+        .mw-shop-header .btn-search {
+            background-color: #FF7700 !important;
+            border: 1px solid #FF7700 !important;
+        }
+
+        .home-6-sec2 .pro-detail .icons,
+        .irs--round .irs-bar,
+        .cou .card-image .property-tools + .property-tools,
+        .ui-slider .ui-slider-range,
+        .cart-action,
+        .widget-tags a:hover,
+        .testimonial-4.owl-theme .owl-dots .owl-dot.active span,
+        .testimonial-4.owl-theme .owl-dots .owl-dot:hover span,
+        .max-bodytype-8-browse span:hover {
+            background: #FF7700 !important;
+        }
+
+        .checkout-cart {
+            border-top: 2px solid #FF7700 !important;
+        }
+
+        .no-container > .right-area > .inner-content .widget-inner-icon,
+        .btn-search {
+            background: #FF7700;
+            border: 1px solid #FF7700;
+        }
+
+        .ag-about .about-content .cal-action ul li.border-li {
+            border-left: 2px solid #FF7700;
+        }
+
+            .ag-about .about-content .cal-action ul li.border-li span {
+                border: 2px solid #FF7700;
+            }
+
+        .btn-border {
+            border: 1px solid #FF7700;
+            color: #FF7700 !important;
+        }
+
+        .home-6-sec2 .pro-detail {
+            border-bottom: 3px solid #FF7700;
+        }
+
+        .preloader-site .lds-ripple div,
+        .irs--round .irs-handle {
+            border: 4px solid #FF7700;
+        }
+
+        .heading-dots .h-dot.line-dot {
+            border-right: 40px solid #FF7700;
+        }
+
+        .heading-dots .h-dot {
+            border-right: 3px solid #FF7700;
+        }
+
+        .btn-face:hover,
+        .btn-google:hover {
+            border-color: #ff7700;
+        }
+
+        .btn-theme,
+        .realestate-search-blog .input-group .input-group-append .blog-search-btn,
+        .page-item.active .page-link,
+        .page-link:hover,
+        .scroll-top,
+        .modal-content .modal-from .modal-header,
+        .walkscore-container .walkscore-score-div div,
+        .agent-list1:hover .btn-light,
+        .woocommerce #respond input#submit,
+        .woocommerce a.button,
+        .woocommerce button.button,
+        .woocommerce input.button,
+        .woocommerce #respond input#submit.alt,
+        .woocommerce a.button.alt,
+        .woocommerce button.button.alt,
+        .woocommerce input.button.alt,
+        #wcmp-store-conatiner input[type=submit],
+        .details-box-btn .seller-detial .btn-outline-custom:hover,
+        .woocommerce #respond input#submit.alt,
+        .woocommerce a.button.alt,
+        .woocommerce button.button.alt,
+        .woocommerce input.button.alt,
+        .woocommerce #respond input#submit,
+        .woocommerce a.button,
+        .woocommerce button.button,
+        .woocommerce input.button,
+        .woocommerce ul.products .mw-product-grid:hover .btn-outline-custom,
+        .mw-product-grid:hover .btn-outline-custom {
+            background: #ff7700 !important;
+            border: 1px solid #ff7700 !important;
+        }
+
+            .btn-theme:focus,
+            .btn-theme:hover,
+            .btn-outline:hover,
+            .header-1 .sb-menu > ul.auth-elements > li.submit-btn:last-child > a:hover,
+            .scroll-top:hover,
+            .nhome-3 .sb-menu > ul.auth-elements > li.submit-btn:last-child > a:hover,
+            .woocommerce #respond input#submit:hover,
+            .woocommerce a.button:hover,
+            .woocommerce button.button:hover,
+            .woocommerce input.button:hover,
+            .woocommerce #respond input#submit.alt:hover,
+            .woocommerce a.button.alt:hover,
+            .woocommerce button.button.alt:hover,
+            .woocommerce input.button.alt:hover,
+            .header-minimal .sb-menu .menu-right-area li a.btn-theme:hover .woocommerce #respond input#submit.alt:hover,
+            .woocommerce a.button.alt:hover,
+            .woocommerce button.button.alt:hover,
+            .woocommerce input.button.alt:hover,
+            .woocommerce #respond input#submit:hover,
+            .woocommerce a.button:hover,
+            .woocommerce button.button:hover,
+            .woocommerce input.button:hover {
+                background-color: #e56b00 !important;
+                border-color: #e56b00 !important;
+            }
+
+            .btn-theme:active {
+                background-color: #e56b00;
+                border-color: #e56b00;
+            }
+
+            .btn-theme.btn-second {
+                background-color: #e56b00;
+                border-color: #e56b00;
+            }
+
+                .btn-theme.btn-second:hover {
+                    background: #ff7700;
+                    border: 1px solid #ff7700;
+                }
+
+        .ag-hero .search-data .search-box button,
+        .classic-search-bar button,
+        #breadcrumb-custom li a,
+        #breadcrumb-custom li:nth-child(2n) a,
+        .woocommerce .maxwheels-shop nav.woocommerce-pagination ul li a:focus,
+        .woocommerce .maxwheels-shop nav.woocommerce-pagination ul li a:hover,
+        .woocommerce .maxwheels-shop nav.woocommerce-pagination ul li span.current {
+            background: #ff7700;
+        }
+
+        #breadcrumb-custom li:nth-child(even) a:before {
+            border-color: #ff7700;
+            border-left-color: transparent;
+        }
+
+        .ag-hero .search-data .search-box button:hover,
+        .classic-search-bar button:hover {
+            background: #e56b00;
+        }
+
+        .woocommerce .shop-sidebar .shop-widget ul li.current-cat a::after,
+        .woocommerce .shop-sidebar .shop-widget ul li.chosen a::after,
+        .woocommerce .shop-sidebar .shop-widget ul li.current-cat a::after {
+            background-color: #ff7700 !important;
+        }
+
+        .scrollprogress,
+        .select2-container--classic .select2-results__option--highlighted[aria-selected],
+        .property-detial-page .flex-direction-nav a:hover,
+        .walkscore-container .walkscore-score-div::after {
+            background: #ff7700;
+        }
+
+        .pretty input:checked ~ .state.p-primary label::after,
+        .pretty.p-toggle .state.p-primary label::after,
+        .featured-slider-prop .owl-nav .owl-next,
+        .featured-slider-prop .owl-nav .owl-pre {
+            background-color: #ff7700 !important;
+        }
+
+        #breadcrumb-custom li a::after {
+            border-left-color: #ff7700;
+        }
+    </style>
+    <link rel='stylesheet' id='maxwheels-responsive-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/responsive.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='maxwheels-shop-css' href='~/templatefiles/wp-content/themes/maxwheels/libs/css/mwshop.css?ver=6.0.1' media='all'>
+    <link rel='stylesheet' id='elementor-icons-css' href='~/templatefiles/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0' media='all'>
+    <link rel='stylesheet' id='elementor-frontend-css' href='~/templatefiles/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.6.6' media='all'>
+    <link rel='stylesheet' id='elementor-post-10-css' href='~/templatefiles/wp-content/uploads/elementor/css/post-10.css?ver=1654841590' media='all'>
+    <link rel='stylesheet' id='elementor-global-css' href='~/templatefiles/wp-content/uploads/elementor/css/global.css?ver=1654841591' media='all'>
+    <link rel='stylesheet' id='elementor-post-3609-css' href='~/templatefiles/wp-content/uploads/elementor/css/post-3609.css?ver=1654841966' media='all'>
+    <link rel='stylesheet' id='google-fonts-1-css' href='css?family=Lato%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.0.1'
+          media='all'>
+    <script src='~/templatefiles/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+    <script src='~/templatefiles/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+    <link rel="https://api.w.org/" href="~/templatefiles/wp-json/index.htm">
+    <link rel="alternate" type="application/json" href="~/templatefiles/wp-json/wp/v2/pages/3609">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="~/templatefiles/wp-includes/wlwmanifest.xml">
+    <meta name="generator" content="WordPress 6.0.1">
+    <meta name="generator" content="WooCommerce 6.5.1">
+    <link rel="canonical" href="index.htm">
+    <link rel='shortlink' href='index.htm'>
+    <link rel="alternate" type="application/json+oembed" href="~/templatefiles/wp-json/oembed/1.0/embed?url=https%3A%2F%2Flisting.maxwheelswp.com%2F">
+    <link rel="alternate" type="text/xml+oembed" href="~/templatefiles/wp-json/oembed/1.0/embed-1?url=https%3A%2F%2Flisting.maxwheelswp.com%2F&#038;format=xml">
+    <meta name="generator" content="Redux 4.3.14">
+    <noscript>
+        <style>
+            .woocommerce-product-gallery {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+    <link rel="icon" href="~/templatefiles/wp-content/uploads/2021/03/cropped-favicon-1-100x100.png" sizes="32x32">
+    <link rel="icon" href="~/templatefiles/wp-content/uploads/2021/03/cropped-favicon-1-300x300.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="~/templatefiles/wp-content/uploads/2021/03/cropped-favicon-1-300x300.png">
+    <meta name="msapplication-TileImage" content="https://listing.maxwheelswp.com/wp-content/uploads/2021/03/cropped-favicon-1-300x300.png">
+</head>
+
+<body class="home page-template page-template-page-home page-template-page-home-php page page-id-3609 theme-maxwheels woocommerce-no-js is-active-plug elementor-default elementor-template-full-width elementor-kit-10 elementor-page elementor-page-3609">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0.49803921568627"></fefuncr><fefuncg type="table" tablevalues="0 0.49803921568627"></fefuncg><fefuncb type="table" tablevalues="0 0.49803921568627"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tablevalues="0 1"></fefuncr>
+                    <fefuncg type="table" tablevalues="0 1"></fefuncg>
+                    <fefuncb type="table" tablevalues="0 1"></fefuncb>
+                    <fefunca type="table" tablevalues="1 1"></fefunca>
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tablevalues="0 1"></fefuncr>
+                    <fefuncg type="table" tablevalues="0 0.27843137254902"></fefuncg>
+                    <fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902"></fefuncb>
+                    <fefunca type="table" tablevalues="1 1"></fefunca>
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0"></fefuncr><fefuncg type="table" tablevalues="0 0.64705882352941"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tablevalues="0.78039215686275 1"></fefuncr>
+                    <fefuncg type="table" tablevalues="0 0.94901960784314"></fefuncg>
+                    <fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412"></fefuncb>
+                    <fefunca type="table" tablevalues="1 1"></fefunca>
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tablevalues="0.098039215686275 1"></fefuncr>
+                    <fefuncg type="table" tablevalues="0 0.66274509803922"></fefuncg>
+                    <fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725"></fefuncb>
+                    <fefunca type="table" tablevalues="1 1"></fefunca>
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
+            </filter>
+        </defs>
+    </svg>
+    <div class="sb-header sb-mega-menu mw-ele header-minimal make-me-trans">
+        <div class="container-fluid">
+            <div class="sb-header-container">
+                <div class="logo" data-sticky-logo="https://listing.maxwheelswp.com/wp-content/themes/maxwheels/libs/images/logo.svg" data-mobile-logo="https://listing.maxwheelswp.com/wp-content/uploads/2021/03/logo.svg">
+                    <a href="index.htm"><img src="~/templatefiles/wp-content/uploads/2021/08/logo-white.svg" alt=""></a>
+                </div>
+                <div class="burger-menu">
+                    <div class="line-menu line-half first-line"></div>
+                    <div class="line-menu"></div>
+                    <div class="line-menu line-half last-line"></div>
+                </div>
+                <nav class="sb-menu menu-caret submenu-top-border">
+                    <ul class="menu-items">
+                        <li class="">
+                            <a href="#">Home  </a>
+                        </li>
+
+                        <li class=""><a asp-controller="Inventory" asp-action="index">Inventory  </a></li>
+                        <li class="">
+                            <a asp-controller="Dealer" asp-action="index">Dealers </a>
+                        </li>
+                        <li class="">
+                            <a asp-controller="Blog" asp-action="index">Blogs </a>
+                        </li>
+                        <li class=""><a asp-controller="Service" asp-action="index">Services  </a></li>
+                    </ul>
+                    <ul class="menu-right-area logged-user-profile">
+
+                       
+                        <li>
+                            <a class="btn btn-theme" asp-area="admin" asp-controller="Home" asp-action="index">Go to admin panel</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div data-elementor-type="wp-page" data-elementor-id="3609" class="elementor elementor-3609">
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-b9e46ac elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b9e46ac" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-background-overlay"></div>
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5051224" data-id="5051224" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-b77ca01 elementor-widget elementor-widget-hero-four" data-id="b77ca01" data-element_type="widget" data-widget_type="hero-four.default">
+                            <div class="elementor-widget-container">
+                                <section class="maxwheels-elegent">
+                                    <div class="container">
+                                        <div class="cotnent-box">
+                                            <div class="title-box">
+                                                <h3 class="text-white">22,000+ Browse Cars </h3>
+                                                <span class="short-desc"> Find Cars, Bikes &amp; Certified New &amp; Used Cars  </span>
+                                            </div>
+                                            <form class="main-home-page" method="get" action="https://listing.maxwheelswp.com/inventory/">
+                                                <div class="row">
+                                                    <div class="form-group col-lg-4 col-md-12 col-sm-12 col-12">
+                                                        <label>Explore</label>
+                                                        <svg class="ab-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24"><g fill="none"><path d="M21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></g></svg>
+                                                        <div class="typeahead__container custom-style-frontend">
+                                                            <div class="typeahead__field">
+                                                                <div class="typeahead__query">
+                                                                    <input type="text" class="mw_get_smple form-control is_smple" name="by_title" autocomplete="off" value="" placeholder="What are you looking for...">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-lg-3 col-md-12 col-sm-12 col-12">
+                                                        <label>Make</label>
+                                                        <svg class="ab-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24"><g fill="none"><path d="M12 20v-8m0 0V4m0 8h8m-8 0H4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></g></svg>
+                                                        <select class="theme-selects" data-placeholder="Select Make" name="category">
+                                                            <option value="">Select an option</option>
+                                                            <option value="alfa-romeo">Alfa Romeo</option>
+                                                            <option value="audi">Audi</option>
+                                                            <option value="bmw">BMW</option>
+                                                            <option value="chevrolet">Chevrolet</option>
+                                                            <option value="ferrari">Ferrari</option>
+                                                            <option value="ford">Ford</option>
+                                                            <option value="honda">Honda</option>
+                                                            <option value="kia">Kia</option>
+                                                            <option value="mercedes-benz">Mercedes Benz</option>
+                                                            <option value="mg">MG</option>
+                                                            <option value="tesla">Tesla</option>
+                                                            <option value="toyota">Toyota</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-lg-3 col-md-12 col-sm-12 col-12">
+                                                        <label>Transmission</label>
+                                                        <svg class="ab-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24"><g fill="none"><path d="M12 2a2.75 2.75 0 0 0-.75 5.396v3.854a.75.75 0 0 0 1.5 0V7.396A2.751 2.751 0 0 0 12 2zm-1.25 2.75a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0zM3 6.5a2.5 2.5 0 0 1 5 0V10h2.25v1.5H6.5v-5a1 1 0 0 0-2 0v12a1 1 0 1 0 2 0v-5H11v5a1 1 0 1 0 2 0v-5h6a.5.5 0 0 0 .5-.5V6.5a1 1 0 1 0-2 0v5h-3.75V10H16V6.5a2.5 2.5 0 0 1 5 0V13a2 2 0 0 1-2 2h-4.5v3.5a2.5 2.5 0 0 1-5 0V15H8v3.5a2.5 2.5 0 0 1-5 0v-12z" fill="currentColor"></path></g></svg>
+                                                        <select class="search-selects" data-placeholder="Eg Manual" name="transmission[]">
+                                                            <option value="">Select an option</option>
+                                                            <option value="automatic">Automatic</option>
+                                                            <option value="manual">Manual</option>
+                                                            <option value="semi-automatic">Semi Automatic</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-lg-2 col-md-12 col-sm-12 text-end">
+                                                        <button type="submit" class="btn btn-theme h-100">Search</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-58ff6f3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="58ff6f3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-417f3c7" data-id="417f3c7" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-90c1e91 elementor-widget elementor-widget-heading" data-id="90c1e91" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h3 class="elementor-heading-title elementor-size-default">Top Makes</h3>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-cf8b223 elementor-widget elementor-widget-heading" data-id="cf8b223" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h2 class="elementor-heading-title elementor-size-default">Browse By Brands </h2>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-adad69b elementor-widget elementor-widget-amakes-3" data-id="adad69b" data-element_type="widget" data-widget_type="amakes-3.default">
+                            <div class="elementor-widget-container">
+                                <section class="all-makes-3">
+                                    <div class="row justify-content-center align-items-center text-center">
+
+                                        @foreach (var item in Model.Brands)
+                                        {
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-1.htm?category=bmw">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/Uploads/@item.ImageName" alt="BMW">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">@item.Name</span>
+                                            </a>
+                                        </div>
+                                        }
+
+                                        
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-2.htm?category=mercedes-benz">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/03/mercedes.png" alt="Mercedes Benz">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Mercedes Benz</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-3.htm?category=chevrolet">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/03/%D1%81hevrolet_PNG157.png" alt="Chevrolet">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Chevrolet</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-4.htm?category=ferrari">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/04/ferrari_.png" alt="Ferrari">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Ferrari</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-5.htm?category=toyota">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/03/toyota-logo.png" alt="Toyota">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Toyota</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-6.htm?category=kia">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/03/kia_PNG46.png" alt="Kia">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Kia</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-7.htm?category=honda">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/03/honda-logo.png" alt="Honda">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Honda</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-8.htm?category=ford">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/03/ford-logo-icon-png-14228.png" alt="Ford">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Ford</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-9.htm?category=tesla">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/03/tesla_logo_PNG19.png" alt="Tesla">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Tesla</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-10.htm?category=mg">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/03/car_logo_PNG1657.png" alt="MG">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">MG</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-11.htm?category=audi">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/03/audi-logo-2.png" alt="Audi">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Audi</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-2 col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-30">
+                                            <a href="inventory/index-12.htm?category=alfa-romeo">
+                                                <div class="image-bar">
+                                                    <span class="mks-3">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/04/alfa.png" alt="Alfa Romeo">
+                                                    </span>
+                                                </div>
+                                                <span class="mks-3-name">Alfa Romeo</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-ed0eb54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ed0eb54" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-35e0cb1" data-id="35e0cb1" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-acbcbe2 elementor-widget elementor-widget-heading" data-id="acbcbe2" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h3 class="elementor-heading-title elementor-size-default">latest submission</h3>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-c64421e elementor-widget elementor-widget-heading" data-id="c64421e" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h2 class="elementor-heading-title elementor-size-default">Find the Best Deals For You</h2>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-285380f elementor-widget elementor-widget-all-listings" data-id="285380f" data-element_type="widget" data-widget_type="all-listings.default">
+                            <div class="elementor-widget-container">
+                                <section class="all-listings">
+                                    <div class="row grids dynamic_loading">
+
+
+
+                                        @foreach (var item in Model.Cars)
+                                        {
+
+                                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 grid-item">
+                                                <div class="icon-box cou ">
+                                                    <div class="card-image">
+                                                        <img width="355" height="230" src="~/Uploads/@item.CarImages.FirstOrDefault().ImageName" class="img-fluid  wp-post-image" alt="" loading="lazy" sizes="(max-width: 355px) 100vw, 355px">
+                                                        <div class="property-labels absolute-yes">
+                                                            <div class="label-badges">
+                                                                <ul class="list-unstyled text-start">
+                                                                    <li class="list-inline-item">
+                                                                        <span class="mydata-attr badge badge-type-306" data-url="https://listing.maxwheelswp.com/inventory/?type[]=hot-offer">Hot Offer</span>
+                                                                    </li>
+                                                                    <li class="list-inline-item">
+                                                                        <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">@item.Condition</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <button data-compare-id="2161" class="property-tools fav-comp btn d-flex justify-content-center align-items-center compare-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare"><i class="fas fa-random"></i></button>
+                                                        <button data-fav-id="2161" class="property-tools btn d-flex justify-content-center align-items-center fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite"><i class="far fa-heart"></i></button>
+                                                    </div>
+
+                                                    <span class="body-type"><span class="mydata-attr" data-url="https://listing.maxwheelswp.com/inventory/?body-types[]=crossover">@item.BodyType</span></span>
+                                                    <h2><a class="clr-black" asp-controller="Inventory" asp-action="ProductDetail">@item.CarModel.Brand.Name @item.CarModel.Name</a></h2>
+                                                    <h3>$ 13,995</h3>
+                                                    <hr>
+                                                    <div class="view-detail">
+                                                        <ul class="car-features-meta">
+                                                            <li>
+                                                                <span class="label">Transmission</span>
+                                                                <span class="value"><span class="mydata-attr" data-url="https://listing.maxwheelswp.com/inventory/?transmission[]=automatic">Automatic</span></span>
+                                                            </li>
+                                                            <li>
+                                                                <span class="label">Drive</span>
+                                                                <span class="value"><span class="mydata-attr" data-url="https://listing.maxwheelswp.com/inventory/?drive-type[]=4wd">4WD</span></span>
+                                                            </li>
+                                                            <li>
+                                                                <span class="label">Mileage</span>
+                                                                <span class="value">15,000 (Mi)</span>
+                                                            </li>
+                                                        </ul>
+                                                        <a href="listings/2020-diego-mg-zs/index.htm" class="btn btn-black w-100">View Details</a>
+                                                        <div class="detail-button"> Listed by : <a href="dealer/mvp-automotives/index.htm"><strong>@item.Dealer.Name</strong></a> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        }
+                                   
+
+
+
+
+                                    </div>
+                                    <div class="is-show-load-more fetch-more-records text-center">
+                                        <button type="button" class="fetch_dynamic_results btn btn-theme sonu-button margin-bottom-30 margin-top-10" data-limit="8" data-listingtype="simple" data-orderby="desc" data-layouttype="type8" data-typestatus="all" data-locationid="" data-maxpages="3"
+                                                data-category="" data-page="1" data-coltype="4">
+                                            Load More
+                                        </button>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-06b52c7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="06b52c7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-background-overlay"></div>
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ff70f80" data-id="ff70f80" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-6696093 elementor-widget elementor-widget-call-action-one" data-id="6696093" data-element_type="widget" data-widget_type="call-action-one.default">
+                            <div class="elementor-widget-container">
+                                <div class="section-padding-extra text-center call-actionz white-mod">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="parallex-text">
+                                                <h5>WE ARE SINCE 1970 </h5>
+                                                <h4>Buy Your Car Quickly and Easily</h4>
+                                                <p>We believe in making simple and fair pricing plans. Choose your next successful plan and get started today!. </p>
+                                                <a href="#" target="_blank" rel="nofollow" class="btn btn-theme">View Inventory</a>
+                                                <a href="#" target="_blank" rel="nofollow" class="btn btn-theme  btn-second">Sell Your Car</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-b5eaa39 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b5eaa39" data-element_type="section">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ef5b52b" data-id="ef5b52b" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-9b5d878 elementor-widget elementor-widget-heading" data-id="9b5d878" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h3 class="elementor-heading-title elementor-size-default">trusted dealers</h3>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-13910ac elementor-widget elementor-widget-heading" data-id="13910ac" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h2 class="elementor-heading-title elementor-size-default">Best Dealers In Town</h2>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-71f01df elementor-widget elementor-widget-all-dealers" data-id="71f01df" data-element_type="widget" data-widget_type="all-dealers.default">
+                            <div class="elementor-widget-container">
+                                <section class="all-agencies agency-1 agent-section">
+                                    <div class="row   grid dynamic_loading_agencies ">
+
+
+                                        @foreach (var item in Model.Dealers)
+	{
+		 
+                                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 margin-bottom-30 grid-item my-dealer-1">
+                                            <div class="bg-autoh2 bgclr-white agnc ">
+
+                                                <div class="upper-contain">
+                                                    <div class="agen-thumb-img">
+                                                        <a href="dealer/showcase-auto-sales/index.htm">
+                                                            <img width="1200" height="1000" src="~/Uploads/@item.ImageName" class="img-fluid  wp-post-image" alt="" loading="lazy" 
+                                                                 sizes="(max-width: 1200px) 100vw, 1200px">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="all-content-area">
+                                                    <h2>
+                                                        <a class="clr-black" href="dealer/showcase-auto-sales/index.htm">@item.Name</a>
+                                                    </h2>
+                                                    <p>@item.Location</p>
+
+                                                    <ul class="short-desc">
+                                                        <li>
+                                                            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                                                                 preserveaspectratio="xMidYMid meet" viewbox="0 0 26 26">
+                                                                <path d="M1 0C.449 0 0 .449 0 1v16c0 .551.449 1 1 1h16c.551 0 1-.449 1-1V1c0-.551-.449-1-1-1H1zm1 2h14v12H2V2zm17 .906v2.031l1.813.313L19 15.75V17c0 1.104-.897 2-2 2H6.406l12.688 2.188a1 1 0 0 0 1.156-.813l2.688-15.781a.999.999 0 0 0-.813-1.157L19 2.907zM9 3.937c-1.151 0-2.125.792-2.125 2.282c0 .974.434 1.952 1.031 2.562c.234.61-.164.842-.25.875c-1.206.436-2.625 1.245-2.625 2.031v1.282h7.938v-1.281c0-.81-1.422-1.614-2.688-2.032c-.058-.019-.417-.18-.187-.875c.595-.61 1.062-1.593 1.062-2.562c0-1.49-1.005-2.282-2.156-2.282zm14.406 3.97l-.343 1.968l.718.156l-2.75 11.688l-.406-.094a1.954 1.954 0 0 1-1.719.531L5.063 19.781L4.78 20.97a1.023 1.023 0 0 0 .75 1.218l15.563 3.657a1.023 1.023 0 0 0 1.218-.75L25.938 9.53c.127-.536-.18-1.091-.718-1.219l-1.813-.406z" fill="#626262"></path>
+                                                            </svg>
+                                                            <p>Total Listings : 1 </p>
+                                                        </li>
+                                                        <li>
+                                                            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.63em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                                                                 preserveaspectratio="xMidYMid meet" viewbox="0 0 320 512">
+                                                                <path d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z" fill="#626262"></path>
+                                                            </svg>
+                                                            <p><span class="click-reveal phonenumber">@item.Mobile</span></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+	}
+
+                                        
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="is-show-load-more fetch-more-records text-center ">
+                                        <button type="button" class="fetch_dynamic_agencies btn btn-theme agency-btnload margin-bottom-30 margin-top-10" data-limit="8" data-listingtype="all" data-orderby="desc" data-layouttype="grid1" data-maxpages="2" data-page="1" data-coltype="4">Load More</button>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-b48b455 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="b48b455" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-container elementor-column-gap-no">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b7f22d0" data-id="b7f22d0" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-3d2d315 elementor-widget elementor-widget-heading" data-id="3d2d315" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h3 class="elementor-heading-title elementor-size-default">Looking More!</h3>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-efd4f4c elementor-widget elementor-widget-heading" data-id="efd4f4c" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h2 class="elementor-heading-title elementor-size-default">Explore By Body Type </h2>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-c155de0 elementor-widget elementor-widget-body-classic" data-id="c155de0" data-element_type="widget" data-widget_type="body-classic.default">
+                            <div class="elementor-widget-container">
+                                <section class="body-type-1">
+                                    <div class="container">
+                                        <div class="row justify-content-center align-items-center">
+                                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                                                <div class="mydata-attr body-types-makes" data-url="https://listing.maxwheelswp.com/inventory/?body-types[]=coupe">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/coupe-1.png" alt="">
+                                                    <div class="mk-head">
+                                                        <h3>Coupe</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                                                <div class="mydata-attr body-types-makes" data-url="https://listing.maxwheelswp.com/inventory/?body-types[]=crossover">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/crossover-1.png" alt="">
+                                                    <div class="mk-head">
+                                                        <h3>Crossover</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                                                <div class="mydata-attr body-types-makes" data-url="https://listing.maxwheelswp.com/inventory/?body-types[]=truck">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/truck-1.png" alt="">
+                                                    <div class="mk-head">
+                                                        <h3>Truck</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                                                <div class="mydata-attr body-types-makes" data-url="https://listing.maxwheelswp.com/inventory/?body-types[]=wagon">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/wan.png" alt="">
+                                                    <div class="mk-head">
+                                                        <h3>Wagon</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                                                <div class="mydata-attr body-types-makes" data-url="https://listing.maxwheelswp.com/inventory/?body-types[]=sedan">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/sedan-1.png" alt="">
+                                                    <div class="mk-head">
+                                                        <h3>Sedan</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                                                <div class="mydata-attr body-types-makes" data-url="https://listing.maxwheelswp.com/inventory/?body-types[]=convertible">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/convertable.png" alt="">
+                                                    <div class="mk-head">
+                                                        <h3>Convertible</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-59b2c95 just-for-home elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="59b2c95" data-element_type="section"
+                 data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0976788" data-id="0976788" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-b22175c elementor-widget elementor-widget-our-services2" data-id="b22175c" data-element_type="widget" data-widget_type="our-services2.default">
+                            <div class="elementor-widget-container">
+                                <section class="max-ser-2">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-xl-5 col-sm-12  align-self-center">
+                                            <div class="max-bodytype14-text">
+                                                <span>Why Choose Us</span>
+                                                <h3>We Provide Best Services</h3>
+                                                <p>
+                                                    If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&#039;t anything years old will uncover many web sites still in their infancy from 45 BC, making it over 2000
+                                                    years old will uncover many web sites still in their infancy
+                                                </p>
+                                            </div>
+                                            <div class="max-bodytype14-img">
+                                                <img src="~/templatefiles/wp-content/uploads/2021/04/es7.png" alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-xl-7 col-sm-12">
+                                            <div class="row">
+                                                <div class="eq-height col-xl-6 col-sm-12 col-md-6 col-12 col-lg-6">
+                                                    <div class="max-bodytype14-box">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/04/mechanic1.png" alt="">
+                                                        <h3>Expert Certified Mechanics</h3>
+                                                        <p>Dwelling and speedily ignorant any steepest. Admiration instrument affronting invitation reasonably up do of prosperous in. Shy saw declared age debating.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="eq-height col-xl-6 col-sm-12 col-md-6 col-12 col-lg-6">
+                                                    <div class="max-bodytype14-box">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/04/money.png" alt="">
+                                                        <h3>Get Reasonable Price</h3>
+                                                        <p>Started his hearted any civilly. So me by marianne admitted speaking. Men bred fine call ask. Cease one miles truth day above seven. Suspicion sportsmen provision.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="eq-height col-xl-6 col-sm-12 col-md-6 col-12 col-lg-6">
+                                                    <div class="max-bodytype14-box">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/04/car-service.png" alt="">
+                                                        <h3>Genuine Spares Parts</h3>
+                                                        <p>Post no so what deal evil rent by real in. But her ready least set lived spite solid. September how men saw tolerably two behaviour arranging.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="eq-height col-xl-6 col-sm-12 col-md-6 col-12 col-lg-6">
+                                                    <div class="max-bodytype14-box">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/04/24-hours.png" alt="">
+                                                        <h3> 24 Hours Support </h3>
+                                                        <p>Boy desirous families prepared gay reserved add ecstatic say. Replied joy age visitor nothing cottage. Mrs door paid led loud sure easy read.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-dd3d117 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="dd3d117" data-element_type="section">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a92cea0" data-id="a92cea0" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-8cf63e3 elementor-widget elementor-widget-heading" data-id="8cf63e3" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h3 class="elementor-heading-title elementor-size-default">latest published</h3>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-e7590e0 elementor-widget elementor-widget-heading" data-id="e7590e0" data-element_type="widget" data-widget_type="heading.default">
+                            <div class="elementor-widget-container">
+                                <h2 class="elementor-heading-title elementor-size-default">Upcomming Cars And Events</h2>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-745e604 elementor-widget elementor-widget-all-blogs" data-id="745e604" data-element_type="widget" data-widget_type="all-blogs.default">
+                            <div class="elementor-widget-container">
+                                <section class="blog-section-2 just-for-home">
+                                    <div class="row grid">
+                                        @foreach (var item in Model.Blogs)
+                                        {
+                                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 margin-bottom-30 grid-item">
+                                                <div class="blog-grids">
+                                                    <div class="gridz">
+                                                        <div class="entry-media">
+                                                            <img width="450" height="260" src="~/Uploads/@item.ImageName" class="attachment-maxwheels-blog-grids size-maxwheels-blog-grids wp-post-image"
+                                                                 alt="" loading="lazy">
+                                                        </div>
+                                                        <div class="entry-body">
+                                                            <span class="cat">@item.BlogCategory.Name</span>
+                                                            <h3><a href="blog/2021-hyundai-santa-fe-facelift-launched/index.htm">2021 Hyundai Santa Fe Is Launched In Indonesia</a></h3>
+                                                            <p>@item.Descriptoin</p>
+                                                            <div class="read-more-date">
+                                                                <a href="blog/2021-hyundai-santa-fe-facelift-launched/index.htm" title="2021 Hyundai Santa Fe Is Launched In Indonesia">Read More..</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 margin-bottom-30 grid-item">
+                                            <div class="blog-grids">
+                                                <div class="gridz">
+                                                    <div class="entry-media">
+                                                        <img width="450" height="260" src="~/templatefiles/wp-content/uploads/2021/04/Kia-Cerato-GT-static-dps_HEADER11-450x260.jpg" class="attachment-maxwheels-blog-grids size-maxwheels-blog-grids wp-post-image"
+                                                             alt="" loading="lazy">
+                                                    </div>
+                                                    <div class="entry-body">
+                                                        <span class="cat">International</span>
+                                                        <h3><a href="blog/kia-cerato-facelift-unveiled-in-south-korea/index.htm">KIA Cerato Facelift Unveiled in South Korea</a></h3>
+                                                        <p>The much awaited KIA Cerato facelift has been officially&hellip;</p>
+                                                        <div class="read-more-date">
+                                                            <a href="blog/kia-cerato-facelift-unveiled-in-south-korea/index.htm" title="KIA Cerato Facelift Unveiled in South Korea">Read More..</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 margin-bottom-30 grid-item">
+                                            <div class="blog-grids">
+                                                <div class="gridz">
+                                                    <div class="entry-media"><img width="450" height="260" src="~/templatefiles/wp-content/uploads/2021/02/cross-450x260.jpg" class="attachment-maxwheels-blog-grids size-maxwheels-blog-grids wp-post-image" alt="" loading="lazy"></div>
+                                                    <div class="entry-body">
+                                                        <span class="cat">International</span>
+                                                        <h3><a href="blog/fresh-batch-of-toyota-corolla-cross-reaches-pakistan/index.htm">Fresh Batch of Toyota Corolla Cross Reaches</a></h3>
+                                                        <p>A premium fresh batch of Toyota Corolla Cross itself&hellip;</p>
+                                                        <div class="read-more-date">
+                                                            <a href="blog/fresh-batch-of-toyota-corolla-cross-reaches-pakistan/index.htm" title="Fresh Batch of Toyota Corolla Cross Reaches">Read More..</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 margin-bottom-30 grid-item">
+                                            <div class="blog-grids">
+                                                <div class="gridz">
+                                                    <div class="entry-media"><img width="450" height="260" src="~/templatefiles/wp-content/uploads/2021/02/Senna1-scaled11-450x260.jpg" class="attachment-maxwheels-blog-grids size-maxwheels-blog-grids wp-post-image" alt="" loading="lazy"></div>
+                                                    <div class="entry-body">
+                                                        <span class="cat">Drive Tips</span>
+                                                        <h3><a href="blog/car-sales-surge-by-44-in-january-2021/index.htm">Car Sales Surge Record High by 44% in January</a></h3>
+                                                        <p>A Gathered hath that days all don&#8217;t one kind&hellip;</p>
+                                                        <div class="read-more-date">
+                                                            <a href="blog/car-sales-surge-by-44-in-january-2021/index.htm" title="Car Sales Surge Record High by 44% in January">Read More..</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-b590f24 custom-size-mw elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b590f24" data-element_type="section"
+                 data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4b3ae67" data-id="4b3ae67" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-ce42266 elementor-widget elementor-widget-call-action-one" data-id="ce42266" data-element_type="widget" data-widget_type="call-action-one.default">
+                            <div class="elementor-widget-container">
+                                <div class="section-padding-extra text-center call-actionz dark-mod">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="parallex-text">
+
+                                                <h4>Do you have something to sell?</h4>
+                                                <p>We believe in making simple and fair pricing plans. Choose your next successful plan and get started today!. </p>
+                                                <a href="submit-listings/index.htm" target="_blank" rel="nofollow" class="btn btn-theme">Sell Your Car Today!</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="dark-footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6  col-sm-6 col-12">
+                        <div class="maxwheels-footer-widgets about-us-info">
+                            <div class="footer-img">
+                                <a href="index.htm"><img src="~/templatefiles/wp-content/themes/maxwheels/libs/images/logo-white.svg" alt="" class="img-fluid"></a>
+                            </div>
+                            <p>Cu qui probo malorum saperet. Ne admodum apeirian iracundia usu, eam cu agam ludus.</p>
+                            <div class="social-icons">
+                                <ul class="social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin "></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="maxwheels-footer-widgets top-locations">
+                            <h2><span>Popular Locations</span></h2>
+                            <ul class="list">
+                                <li>
+                                    <a href="inventory/index-13.htm?location=bristol">
+                                        <i class="fa fa-angle-right"></i>Bristol
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="inventory/index-14.htm?location=england">
+                                        <i class="fa fa-angle-right"></i>England
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="inventory/index-15.htm?location=liverpool">
+                                        <i class="fa fa-angle-right"></i>Liverpool
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="inventory/index-16.htm?location=manchester">
+                                        <i class="fa fa-angle-right"></i>Manchester
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xl-3 col-12">
+                        <div class="maxwheels-footer-widgets top-cats">
+                            <h2><span>Featured Makes</span></h2>
+                            <ul class="list">
+                                <li>
+                                    <a href="inventory/index-11.htm?category=audi">
+                                        <i class="fa fa-angle-right"></i>Audi
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="inventory/index-2.htm?category=mercedes-benz">
+                                        <i class="fa fa-angle-right"></i>Mercedes Benz
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="inventory/index-17.htm?category=explorer-platinum">
+                                        <i class="fa fa-angle-right"></i>Explorer Platinum
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="inventory/index-18.htm?category=sportage">
+                                        <i class="fa fa-angle-right"></i>Sportage
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="maxwheels-footer-widgets top-quick-links">
+                            <h2><span>Quick Links</span></h2>
+                            <ul class="list">
+                                <li>
+                                    <a href="dealers/index.htm">
+                                        <i class="fa fa-angle-right"></i>Dealers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="inventory/index.htm">
+                                        <i class="fa fa-angle-right"></i>Inventory
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="sign-in/index.htm">
+                                        <i class="fa fa-angle-right"></i>Sign In
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="sign-up/index.htm">
+                                        <i class="fa fa-angle-right"></i>Sign Up
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <button class="scroll-top scroll-to-target" data-target="html"><span class="fas fa-angle-up"></span></button>
+    <div class="modal mybode fade" id="mynewpass">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="modal-from new-my-pass" name="mynewPass" method="POST" id="mynewPass">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Reset Your Password</h3>
+                        <button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="theme-row">
+                            <label>New Password<span class="req-mark">*</span></label>
+                            <span class="wrap">
+                                <input type="password" autocomplete="off" data-sanitize="trim" data-validation="length" data-validation-length="3-12" data-validation-error-msg="Please choose a password with at least 3-12 characters." name="password" class="form-control text">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" id="pass_nonce" name="pass_nonce" value="678d0c4760"><input type="hidden" name="_wp_http_referer" value="/"> <input type="hidden" name="requested_user_id" value="">
+                        <button type="submit" class="btn btn-theme btn-reset-new" data-spinner-text="Processing...">Change My Password</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="check_userrole" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="modal-from new-my-pass" name="myuser_type" method="POST" id="myuser_type">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Select User Type</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="theme-row theme-role">
+                            <label>User Type <span class="req-mark">*</span></label>
+                            <span class="wrap">
+                                <select class="form-control theme-selects-role" data-sanitize="trim" name="usertype" data-placeholder="Select User Type" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                                    <option value="dealer">Dealer</option>
+                                    <option value="buyer">Buyer/Individual</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="theme-row">
+                            <label>Display Name  <i class="far fa-question-circle" data-bs-toggle="popover" data-bs-placement="top" data-content="Dealer or Buyer display name eg (Dany Motors)"></i></label>
+                            <span class="wrap">
+                                <input type="text" autocomplete="off" data-sanitize="trim" name="displayname" class="form-control text" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                            </span>
+                        </div>
+                        <span class="theme-txt"><strong>Note:</strong> Please choose your type accordingly because you can't change your type after selection.</span>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" id="usertype_nonce" name="usertype_nonce" value="7de46e3c06"><input type="hidden" name="_wp_http_referer" value="/"> <button type="submit" class="btn btn-theme btn-role" data-spinner-text="Processing...">Select Type</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <input type="hidden" name="is_rtl" value="0">
+    <input type="hidden" name="is_curr_location" value="0">
+    <div class="modal fade" id="vinModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="~/templatefiles/wp-content/themes/maxwheels/libs/images/vin.png" alt="" class="img-fluid mx-auto d-block p-3">
+                    <h3>Where is my VIN?</h3>
+                    <p>The VIN is a unique identification number for your vehicle. It is 17 characters in length.</p>
+                    <ol>
+                        <li>
+                            <h4>Under the windscreen wipers</h4>
+                            <p>Visible through the bottom of the windscreen</p>
+                        </li>
+                        <li>
+                            <h4>Engine Bay</h4>
+                            <p>Under the bonnet, usually at the front or back</p>
+                        </li>
+                        <li>
+                            <h4>Stamped on the chassis</h4>
+                            <p>Some utes and 4WDs, visible within a wheel arch</p>
+                        </li>
+                        <li>
+                            <h4>Inside front door</h4>
+                            <p>Open the door and look on the frame</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="scroll-top scroll-to-target" data-target="html"><span class="fas fa-angle-up"></span></button>
+    <div class="modal mybode fade" id="mynewpass">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="modal-from new-my-pass" name="mynewPass" method="POST" id="mynewPass">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Reset Your Password</h3>
+                        <button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="theme-row">
+                            <label>New Password<span class="req-mark">*</span></label>
+                            <span class="wrap">
+                                <input type="password" autocomplete="off" data-sanitize="trim" data-validation="length" data-validation-length="3-12" data-validation-error-msg="Please choose a password with at least 3-12 characters." name="password" class="form-control text">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" id="pass_nonce" name="pass_nonce" value="678d0c4760"><input type="hidden" name="_wp_http_referer" value="/"> <input type="hidden" name="requested_user_id" value="">
+                        <button type="submit" class="btn btn-theme btn-reset-new" data-spinner-text="Processing...">Change My Password</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="check_userrole" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="modal-from new-my-pass" name="myuser_type" method="POST" id="myuser_type">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Select User Type</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="theme-row theme-role">
+                            <label>User Type <span class="req-mark">*</span></label>
+                            <span class="wrap">
+                                <select class="form-control theme-selects-role" data-sanitize="trim" name="usertype" data-placeholder="Select User Type" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                                    <option value="dealer">Dealer</option>
+                                    <option value="buyer">Buyer/Individual</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="theme-row">
+                            <label>Display Name  <i class="far fa-question-circle" data-bs-toggle="popover" data-bs-placement="top" data-content="Dealer or Buyer display name eg (Dany Motors)"></i></label>
+                            <span class="wrap">
+                                <input type="text" autocomplete="off" data-sanitize="trim" name="displayname" class="form-control text" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                            </span>
+                        </div>
+                        <span class="theme-txt"><strong>Note:</strong> Please choose your type accordingly because you can't change your type after selection.</span>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" id="usertype_nonce" name="usertype_nonce" value="7de46e3c06"><input type="hidden" name="_wp_http_referer" value="/"> <button type="submit" class="btn btn-theme btn-role" data-spinner-text="Processing...">Select Type</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <input type="hidden" name="is_rtl" value="0">
+    <input type="hidden" name="is_curr_location" value="0">
+    <div class="modal fade" id="vinModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="~/templatefiles/wp-content/themes/maxwheels/libs/images/vin.png" alt="" class="img-fluid mx-auto d-block p-3">
+                    <h3>Where is my VIN?</h3>
+                    <p>The VIN is a unique identification number for your vehicle. It is 17 characters in length.</p>
+                    <ol>
+                        <li>
+                            <h4>Under the windscreen wipers</h4>
+                            <p>Visible through the bottom of the windscreen</p>
+                        </li>
+                        <li>
+                            <h4>Engine Bay</h4>
+                            <p>Under the bonnet, usually at the front or back</p>
+                        </li>
+                        <li>
+                            <h4>Stamped on the chassis</h4>
+                            <p>Some utes and 4WDs, visible within a wheel arch</p>
+                        </li>
+                        <li>
+                            <h4>Inside front door</h4>
+                            <p>Open the door and look on the frame</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="ss-copy-popup" class="ss-popup-overlay">
+        <div class="ss-popup">
+
+            <div class="ss-popup-heading">
+                <span>Copy link</span>
+                <a href="#" class="ss-close-modal" rel="nofollow noopener">
+                    <svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M17.883 16.667l7.058-7.058c0.517-0.517 0.517-1.367 0-1.883s-1.367-0.517-1.883 0l-7.058 7.058-7.058-7.058c-0.517-0.517-1.367-0.517-1.883 0s-0.517 1.367 0 1.883l7.058 7.058-7.058 7.058c-0.517 0.517-0.517 1.367 0 1.883 0.258 0.258 0.6 0.392 0.942 0.392s0.683-0.133 0.942-0.392l7.058-7.058 7.058 7.058c0.258 0.258 0.6 0.392 0.942 0.392s0.683-0.133 0.942-0.392c0.517-0.517 0.517-1.367 0-1.883l-7.058-7.058z"></path></svg>
+                </a>
+            </div>
+            <!-- END .ss-popup-heading -->
+
+            <div class="ss-popup-content">
+
+                <div class="ss-copy-action">
+                    <input type="text" readonly="readonly" value="https://listing.maxwheelswp.com/" class="ss-copy-action-field" aria-label="Copy">
+                    <a href="#" class="ss-button" rel="nofollow noopener">Copy<span class="ss-share-network-tooltip">Copied</span></a>
+                    <svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="32" height="32" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M25.313 28v-18.688h-14.625v18.688h14.625zM25.313 6.688c1.438 0 2.688 1.188 2.688 2.625v18.688c0 1.438-1.25 2.688-2.688 2.688h-14.625c-1.438 0-2.688-1.25-2.688-2.688v-18.688c0-1.438 1.25-2.625 2.688-2.625h14.625zM21.313 1.313v2.688h-16v18.688h-2.625v-18.688c0-1.438 1.188-2.688 2.625-2.688h16z"></path></svg>
+                </div>
+                <!-- END .ss-copy-action -->
+
+                <div class="ss-powered-by">Powered by <a href="https://socialsnap.com/?utm_source=WordPress&utm_medium=link&utm_campaign=inthewild" target="_blank" rel="nofollow noopener"><svg class="ss-svg-icon" aria-hidden="true" role="img" focusable="false" width="30" height="32" viewbox="0 0 30 32" xmlns="http://www.w3.org/2000/svg"><path d="M22.293 0.146l7.602 4.172c0.386 0.201 0.386 0.541 0 0.757l-16.688 9.147c-1.684 0.943-2.241 2.271-1.669 3.461 0 0.093 0 0.201-0.201 0.263-0.207 0.088-0.441 0.088-0.649 0l-10.399-5.702c-0.386-0.201-0.386-0.541 0-0.757l20.628-11.311c0.428-0.225 0.937-0.236 1.375-0.031zM7.892 31.854l-7.602-4.172c-0.386-0.201-0.386-0.541 0-0.757l16.688-9.147c1.684-0.943 2.241-2.271 1.669-3.461 0-0.093 0-0.201 0.201-0.263 0.207-0.088 0.442-0.088 0.649 0l10.399 5.702c0.386 0.201 0.386 0.541 0 0.757l-20.628 11.311c-0.428 0.225-0.937 0.237-1.375 0.031z"></path></svg>Social Snap</a></div>
+                <!-- END .ss-powered-by -->
+            </div>
+            <!-- END .ss-popup-content -->
+        </div>
+        <!-- END .ss-popup -->
+    </div>
+    <!-- END #ss-copy-popup -->
+    <script>
+        (function () {
+            var c = document.body.className;
+            c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+            document.body.className = c;
+        })();
+    </script>
+    <link rel='stylesheet' id='e-animations-css' href='~/templatefiles/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.6.6' media='all'>
+    <script id='socialsnap-js-js-extra'>
+        var socialsnap_script = {
+            "ajaxurl": "https:\/\/listing.maxwheelswp.com\/wp-admin\/admin-ajax.php",
+            "on_media_width": "250",
+            "on_media_height": "250",
+            "nonce": "88e44909af",
+            "post_id": "3609"
+        };
+    </script>
+    <script src='~/templatefiles/wp-content/plugins/socialsnap/assets/js/socialsnap.js?ver=1.1.17' id='socialsnap-js-js'></script>
+    <script src='~/templatefiles/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+    <script src='~/templatefiles/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+    <script id='contact-form-7-js-extra'>
+        var wpcf7 = {
+            "api": {
+                "root": "https:\/\/listing.maxwheelswp.com\/wp-json\/",
+                "namespace": "contact-form-7\/v1"
+            }
+        };
+    </script>
+
+    <script src='~/templatefiles/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.6.1' id='contact-form-7-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.5.1' id='jquery-blockui-js'></script>
+    <script id='wc-add-to-cart-js-extra'>
+        var wc_add_to_cart_params = {
+            "ajax_url": "\/wp-admin\/admin-ajax.php",
+            "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
+            "i18n_view_cart": "View cart",
+            "cart_url": "https:\/\/listing.maxwheelswp.com\/cart\/",
+            "is_cart": "",
+            "cart_redirect_after_add": "no"
+        };
+    </script>
+    <script src='~/templatefiles/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=6.5.1' id='wc-add-to-cart-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.5.1' id='js-cookie-js'></script>
+    <script id='woocommerce-js-extra'>
+        var woocommerce_params = {
+            "ajax_url": "\/wp-admin\/admin-ajax.php",
+            "wc_ajax_url": "\/?wc-ajax=%%endpoint%%"
+        };
+    </script>
+
+    <script src='~/templatefiles/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.5.1' id='woocommerce-js'></script>
+    <script id='wc-cart-fragments-js-extra'>
+        var wc_cart_fragments_params = {
+            "ajax_url": "\/wp-admin\/admin-ajax.php",
+            "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
+            "cart_hash_key": "wc_cart_hash_ac0a274a83de5674e11fd89dd7dc4a43",
+            "fragment_name": "wc_fragments_ac0a274a83de5674e11fd89dd7dc4a43",
+            "request_timeout": "5000"
+        };
+    </script>
+    <script src='~/templatefiles/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.5.1' id='wc-cart-fragments-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/bootstrap.min.js?ver=6.0.1' id='bootstrap-js'></script>
+    <script id='sb-menu-js-extra'>
+        var sb_menu_strings = {
+            "sticky_header": "0"
+        };
+    </script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/sbmenu.js?ver=6.0.1' id='sb-menu-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/jquery.validate.min.js?ver=6.0.1' id='validate-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/plugins.js?ver=6.0.1' id='plugins-js'></script>
+
+
+
+    <script src='~/templatefiles/wp-content/plugins/maxwheels-framework/libs/js/leaflet.js?ver=6.0.1' id='leaflet-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/maxwheels-framework/libs/js/leaflet-search.js?ver=6.0.1' id='leaflet-search-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min.js?ver=2.7.2-wc.6.5.1' id='flexslider-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/plugins/chart.min.js?ver=6.0.1' id='jquery-charts-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/stats.js?ver=6.0.1' id='maxwheels-stats-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/plugins/jquery.fancybox.min.js?ver=6.0.1' id='jquery-fancybox-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6' id='swiper-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/plugins/swiper-animation.js?ver=6.0.1' id='swiper-animation-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/plugins/intlTelInput.min.js?ver=6.0.1' id='intlTelInput-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/plugins/isotope.js?ver=6.0.1' id='isotope-js'></script>
+    <script src='~/templatefiles/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
+    <script src='~/templatefiles/wp-includes/js/masonry.min.js?ver=4.2.2' id='masonry-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/plugins/jquery.businessHours.js?ver=6.0.1' id='jquery-businessHours-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/plugins/chart-loader.js?ver=6.0.1' id='chart-loader-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/plugins/countdown.js?ver=6.0.1' id='countdown-js'></script>
+    <script id='maxwheels-custom-js-extra'>
+        var get_strings = {
+            "t_path": "https:\/\/listing.maxwheelswp.com\/wp-content\/themes\/maxwheels",
+            "p_path": "https:\/\/listing.maxwheelswp.com\/wp-content\/plugins\/maxwheels-framework\/",
+            "ajax_url": "https:\/\/listing.maxwheelswp.com\/wp-admin\/admin-ajax.php",
+            "ajax_nonce": "fbd2ca3bcf",
+            "no_r_for": "No result for ",
+            "back": "Back",
+            "main_menu": "Main Menu",
+            "no_rest": "No result found ",
+            "conf": "Confirmation!",
+            "content": "Are you sure you want to do this?",
+            "cong": "Congratulations!",
+            "click_reveal": "Click to reveal!",
+            "rtl": "false",
+            "ok": "Yes",
+            "cancle": "Cancel",
+            "whoops": "Whoops!",
+            "submission_fail": "Form submission failed!",
+            "p_denied": "Permission denied by user.",
+            "p_unava": "Location position unavailable.",
+            "req_timeout": "Request timeout. Please refresh the page and try again.",
+            "unknow_error": "Unknown error. Please refresh the page and try again.",
+            "geolocation": "Browser doesn't support geolocation!.",
+            "ip_type": "geo_ip",
+            "is_map_enabled": "1",
+            "map_type": "open_street",
+            "map_latt_listing": "40.7127837",
+            "map_long_listing": "-74.00594130000002",
+            "map_latt_dealer": "40.7127837",
+            "map_long_dealer": "-74.00594130000002",
+            "gapp_keyz": "",
+            "acc_keyz": "",
+            "congratulations": "Congratulations!",
+            "social_logins": "",
+            "fb_key": "",
+            "google_key": "",
+            "redirect_url": "",
+            "authorization": "",
+            "auth_warning": "Sorry, you are not allowed to access this page.",
+            "is_reset": "",
+            "reset_status": {
+                "status": false,
+                "r_msg": "",
+                "requested_id": ""
+            },
+            "dont_have_role": "",
+            "all_numbers": ""
+        };
+    </script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/theme-custom.js?ver=6.0.1' id='maxwheels-custom-js'></script>
+    <script src='~/templatefiles/wp-content/themes/maxwheels/libs/js/search/listings.js?ver=6.0.1' id='maxwheels-search-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.6.6' id='elementor-webpack-runtime-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.6.6' id='elementor-frontend-modules-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+    <script src='~/templatefiles/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.6.6' id='share-link-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0' id='elementor-dialog-js'></script>
+    <script id='elementor-frontend-js-before'>
+        var elementorFrontendConfig = {
+            "environmentMode": {
+                "edit": false,
+                "wpPreview": false,
+                "isScriptDebug": false
+            },
+            "i18n": {
+                "shareOnFacebook": "Share on Facebook",
+                "shareOnTwitter": "Share on Twitter",
+                "pinIt": "Pin it",
+                "download": "Download",
+                "downloadImage": "Download image",
+                "fullscreen": "Fullscreen",
+                "zoom": "Zoom",
+                "share": "Share",
+                "playVideo": "Play Video",
+                "previous": "Previous",
+                "next": "Next",
+                "close": "Close"
+            },
+            "is_rtl": false,
+            "breakpoints": {
+                "xs": 0,
+                "sm": 480,
+                "md": 768,
+                "lg": 1025,
+                "xl": 1440,
+                "xxl": 1600
+            },
+            "responsive": {
+                "breakpoints": {
+                    "mobile": {
+                        "label": "Mobile",
+                        "value": 767,
+                        "default_value": 767,
+                        "direction": "max",
+                        "is_enabled": true
+                    },
+                    "mobile_extra": {
+                        "label": "Mobile Extra",
+                        "value": 880,
+                        "default_value": 880,
+                        "direction": "max",
+                        "is_enabled": false
+                    },
+                    "tablet": {
+                        "label": "Tablet",
+                        "value": 1024,
+                        "default_value": 1024,
+                        "direction": "max",
+                        "is_enabled": true
+                    },
+                    "tablet_extra": {
+                        "label": "Tablet Extra",
+                        "value": 1200,
+                        "default_value": 1200,
+                        "direction": "max",
+                        "is_enabled": false
+                    },
+                    "laptop": {
+                        "label": "Laptop",
+                        "value": 1366,
+                        "default_value": 1366,
+                        "direction": "max",
+                        "is_enabled": false
+                    },
+                    "widescreen": {
+                        "label": "Widescreen",
+                        "value": 2400,
+                        "default_value": 2400,
+                        "direction": "min",
+                        "is_enabled": false
+                    }
+                }
+            },
+            "version": "3.6.6",
+            "is_static": false,
+            "experimentalFeatures": {
+                "e_dom_optimization": true,
+                "a11y_improvements": true,
+                "e_import_export": true,
+                "e_hidden_wordpress_widgets": true,
+                "landing-pages": true,
+                "elements-color-picker": true,
+                "favorite-widgets": true,
+                "admin-top-bar": true
+            },
+            "urls": {
+                "assets": "https:\/\/listing.maxwheelswp.com\/wp-content\/plugins\/elementor\/assets\/"
+            },
+            "settings": {
+                "page": [],
+                "editorPreferences": []
+            },
+            "kit": {
+                "active_breakpoints": ["viewport_mobile", "viewport_tablet"],
+                "global_image_lightbox": "yes",
+                "lightbox_enable_counter": "yes",
+                "lightbox_enable_fullscreen": "yes",
+                "lightbox_enable_zoom": "yes",
+                "lightbox_enable_share": "yes",
+                "lightbox_title_src": "title",
+                "lightbox_description_src": "description"
+            },
+            "post": {
+                "id": 3609,
+                "title": "Listing%20%E2%80%93%20MaxWheels%20%E2%80%93%20Just%20another%20WordPress%20site",
+                "excerpt": "",
+                "featuredImage": false
+            }
+        };
+    </script>
+    <script src='~/templatefiles/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.6' id='elementor-frontend-js'></script>
+    <script src='~/templatefiles/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.6.6' id='preloaded-modules-js'></script>
+
+    <script>
+
+        var SocialSnapURL = window.location.href;
+        var SocialSnapShareCacheExpired = 1;
+        var SocialSnapShareNetworks = ["facebook", "twitter", "linkedin", "envelope", "copy", "mix", "print"];
+
+        if (-1 !== SocialSnapURL.indexOf('ss_cache_refresh')) {
+
+            SocialSnapShareCacheExpired = true;
+
+        } else {
+
+            var SocialSnapServerTimestamp = 1658955691;
+            var SocialSnapBrowserTimestamp = Date.now();
+
+            if (!SocialSnapBrowserTimestamp) {
+                SocialSnapBrowserTimestamp = new Date().getTime();
+            }
+
+            SocialSnapBrowserTimestamp = Math.floor(SocialSnapBrowserTimestamp / 1000);
+
+            SocialSnapShareCacheExpired = SocialSnapShareCacheExpired && (SocialSnapBrowserTimestamp - SocialSnapServerTimestamp < 60);
+        }
+
+    </script>
+</body>
+
+</html>

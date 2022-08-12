@@ -1,0 +1,1385 @@
+﻿@model List<Car>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="mw-breads white-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.htm"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Inventory</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="inventory-search light-bg custom-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 order-xxl-first order-xl-first  order-last">
+                <div class="project-sidebar">
+                    <form id="mw-search-inv">
+                     
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> <a role="button" class="" data-bs-toggle="collapse" href="#keyword-widget">What Are You Looking For </a> </div>
+                            <div id="keyword-widget" class="keyword-search panel-collapse collapse dont-show" role="tabpanel">
+                                <div class="panel-body">
+                                    <div class="typeahead__container">
+                                        <div class="typeahead__field">
+                                            <div class="typeahead__query">
+                                                <input name="by_title" value="" autocomplete="off" type="search" class="for_search_pages form-control specific_search" placeholder="Keyword (e.g &#039;Honda&#039;)">
+                                            </div>
+                                            <div class="typeahead__button">
+                                                <button type="button">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> <a role="button" class="" data-bs-toggle="collapse" href="#category-widget">Make </a> </div>
+                            <div id="category-widget" class="category-search panel-collapse collapse show" role="tabpanel">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled parent-makes-all">
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="audi">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Audi</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="bmw">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>BMW</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="chevrolet">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Chevrolet</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="ford">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Ford</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="honda">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Honda</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="kia">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Kia</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="mercedes-benz">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Mercedes Benz</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="mg">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>MG</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="tesla">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Tesla</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="make-check" type="radio" value="toyota">
+                                                <div class="state p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Toyota</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <input type="hidden" name="category" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> <a role="button" class="" data-bs-toggle="collapse" href="#condition-widget">Condition </a> </div>
+                            <div id="condition-widget" class="panel-collapse collapse dont-show">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="my-cond" type="checkbox" name="condition[]" value="new">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>New</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input class="my-cond" type="checkbox" name="condition[]" value="used">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Used</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> <a role="button" class="" data-bs-toggle="collapse" href="#offer-widget">Offer Type </a> </div>
+                            <div id="offer-widget" class="panel-collapse collapse dont-show" role="tabpanel">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-types" name="type[]" value="buy">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Buy</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-types" name="type[]" value="hot-offer">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Hot Offer</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-types" name="type[]" value="sell">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Sell</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-types" name="type[]" value="urgent">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Urgent</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> <a role="button" class="" data-bs-toggle="collapse" href="#body-widget">Body Type </a> </div>
+                            <div id="body-widget" class="panel-collapse collapse show" role="tabpanel">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="convertible" name="body-types[]" value="convertible">
+                                                    <label class="custom-control-label" for="convertible">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/Convertible.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>Convertible</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="coupe" name="body-types[]" value="coupe">
+                                                    <label class="custom-control-label" for="coupe">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/Coupe.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>Coupe</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="crossover" name="body-types[]" value="crossover">
+                                                    <label class="custom-control-label" for="crossover">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/Crossover-1.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>Crossover</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="electric" name="body-types[]" value="electric">
+                                                    <label class="custom-control-label" for="electric">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/Electric-1.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>Electric</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="hatchback" name="body-types[]" value="hatchback">
+                                                    <label class="custom-control-label" for="hatchback">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/Hatchback.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>Hatchback</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="hybrid" name="body-types[]" value="hybrid">
+                                                    <label class="custom-control-label" for="hybrid">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/Hybrid.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>Hybrid</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="sedan" name="body-types[]" value="sedan">
+                                                    <label class="custom-control-label" for="sedan">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/Sedan.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>Sedan</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="suv" name="body-types[]" value="suv">
+                                                    <label class="custom-control-label" for="suv">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/SUV.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>SUV</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="truck" name="body-types[]" value="truck">
+                                                    <label class="custom-control-label" for="truck">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/Truck.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>Truck</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="body-typebox">
+                                                <div class="custom-control custom-checkbox image-checkbox">
+                                                    <input type="checkbox" class="custom-control-input my-body-type" id="wagon" name="body-types[]" value="wagon">
+                                                    <label class="custom-control-label" for="wagon">
+                                                        <img src="~/templatefiles/wp-content/uploads/2021/02/Wagon.png" alt="#" class="img-fluid">
+                                                        <span class="bodytype-name"><span>Wagon</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> <a role="button" class="" data-bs-toggle="collapse" href="#year-widget">Year </a> </div>
+                            <div id="year-widget" class="panel-collapse collapse dont-show" role="tabpanel">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-year" name="years[]" value="2016">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>2016</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-year" name="years[]" value="2017">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>2017</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-year" name="years[]" value="2018">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>2018</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-year" name="years[]" value="2019">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>2019</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-year" name="years[]" value="2020">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>2020</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> <a role="button" class="" data-bs-toggle="collapse" href="#transmission-widget">Transmission </a> </div>
+                            <div id="transmission-widget" class="panel-collapse collapse dont-show">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-transm" name="transmission[]" value="automatic">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Automatic</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-transm" name="transmission[]" value="manual">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Manual</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-transm" name="transmission[]" value="semi-automatic">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>Semi Automatic</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> <a role="button" class="" data-bs-toggle="collapse" href="#drive-widget">Drive Type </a> </div>
+                            <div id="drive-widget" class="panel-collapse collapse dont-show" role="tabpanel">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-drive" name="drive-type[]" value="4wd">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>4WD</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-drive" name="drive-type[]" value="awd">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>AWD</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-drive" name="drive-type[]" value="fwd">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>FWD</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pretty p-svg p-curve">
+                                                <input type="checkbox" class="my-drive" name="drive-type[]" value="rwd">
+                                                <div class="state  p-primary">
+                                                    <svg class="svg svg-icon" viewbox="0 0 20 20">
+                                                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                    </svg>
+                                                    <label>RWD</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> <a role="button" class="" data-bs-toggle="collapse" href="#mileage-widget">Kilometers Driven </a> </div>
+                            <div id="mileage-widget" class="panel-collapse kms-driv collapse dont-show" role="tabpanel">
+                                <div class="panel-body">
+                                    <input type="text" class="js-range-slider-mileage" name="km-driven" value="" data-type="double" data-min="10" data-max="70000" data-from="" data-to="" data-grid="true" data-postfix=" (Mi) " data-step="1000">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="submit-btn">
+                            <input type="hidden" name="layout-type" value="grid">
+                            <input type="hidden" name="inventory-author" value="">
+                            <button class="btn btn-theme btn-block filter-results" type="button"> Filter Result</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xxl-9 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="row">
+                    <div class="col-12 col-xl-12 col-md-12 col-sm-12">
+                        <div class="filter-sorting-bar d-flex flex-wrap justify-content-between align-items-center ">
+                            <h4>
+                                <span class="clr-yal"> 23 </span> Results Found
+                            </h4>
+
+                            <div class=" d-flex d-block">
+                                <span id="result_reset" class=" d-flex flex-wrap align-items-center">
+                                    <i class="fas fa-sync-alt" aria-hidden="true"></i> <a class="main-listing__clear" href="index.htm">Reset All Filters</a>
+                                </span>
+                                <div class="short-by">
+                                    <select name="sort-by" id="sort-by" class="sort-selects" data-placeholder="Newest To Oldest">
+                                        <option value="newest">Newest To Oldest</option>
+                                        <option value="oldest">Oldest To New</option>
+                                        <option value="price-asc">Price: Low to High</option>
+                                        <option value="price-desc">Price: High to Low</option>
+                                        <option value="mileage-asc">Mileage: Low to High</option>
+                                        <option value="mileage-desc">Mileage: High to Low</option>
+                                        <option value="year-desc">Model Year: Latest First</option>
+                                        <option value="year-asc">Model Year: Oldest First</option>
+                                    </select>
+                                </div>
+                                <ul class="filters-nav" role="tablist">
+                                    <li><button type="button" name="layout-type" value="grid" class="active-grid sel-class"><i class="fas fa-th"></i></button></li>
+                                    <li><button type="button" name="layout-type" value="list" class="make-me-dark sel-class"><i class="fas fa-bars"></i></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="my-filer-tags">
+                        </div>
+                    </div>
+                </div>
+                <div class="row grid mysearch-page">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                            <div class="card ad-card-1">
+                                <div class="card-image">
+                                    <div class="featured-ribbon" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Featured">
+                                        <div><i class="fas fa-star"></i></div>
+                                    </div>
+                                    <img width="355" height="230" src="~/Uploads/@item.CarImages.FirstOrDefault().ImageName" class="img-fluid  wp-post-image" alt="" loading="lazy" 
+                                         sizes="(max-width: 355px) 100vw, 355px">
+                                    <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="156"> <i class="fas fa-random"></i> </button>
+
+                                    <div class="img-overlay"></div>
+                                    <div class="property-labels absolute-yes">
+                                        <div class="label-badges">
+                                            <ul class="list-unstyled text-start">
+                                                <li class="list-inline-item">
+                                                    <span class="mydata-attr badge badge-type-309" data-url="https://listing.maxwheelswp.com/inventory/?type[]=sell">Sell</span>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">@item.Condition</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body mw-featured">
+                                    <h5 class="card-title">
+                                        <a class="clr-black" asp-controller="Inventory" asp-action="ProductDetail">@item.Year @item.CarModel.Brand.Name @item.CarModel.Name</a>
+                                    </h5>
+                                    <ul class="car-amens list-inline">
+                                        <li class="list-inline-item"><i class="fas fa-road"></i> @item.Milage (Mi)</li>
+                                        <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> @item.FuelType</li>
+                                        <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> @item.EngineSize (L)</li>
+                                    </ul>
+                                    <div class="selling-price">
+                                        <span>$ @item.Price</span>
+                                    </div>
+                                    <div class="details-box-btn">
+                                        <div class="seller-detial">
+                                            <a href="../dealer/grand-prix-motors/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                        </div>
+                                        <div class="mark-as-fav">
+                                            <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="156"> <i class="far fa-heart"></i> </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
+
+
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/07/mg1-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/07/mg1-355x230.jpg 355w, ~/templatefiles/wp-content/uploads/2021/07/mg1-100x66.jpg 100w" sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="2161"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-306" data-url="https://listing.maxwheelswp.com/inventory/?type[]=hot-offer">Hot Offer</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2020-diego-mg-zs/index.htm">2020 MG MG ZS</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 15,000 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Electric</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 1297 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 13,995</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/mvp-automotives/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="2161"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/07/m1-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/07/m1-355x230.jpg 355w,~/templatefiles/wp-content/uploads/2021/07/m1-100x66.jpg 100w" sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="2147"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-306" data-url="https://listing.maxwheelswp.com/inventory/?type[]=hot-offer">Hot Offer</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-79" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=new">New</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2020-camford-mustang/index.htm">2020 CamFord Mustang</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 45,000 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Gasoline</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 4951 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 49,950</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/alb-cars/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="2147"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/07/b3-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/07/b3-355x230.jpg 355w, ~/templatefiles/wp-content/uploads/2021/07/b3-100x66.jpg 100w" sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="2141"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-309" data-url="https://listing.maxwheelswp.com/inventory/?type[]=sell">Sell</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2020-xze-bmw-7-series-730li/index.htm">2020 Xze BMW 7 Series 730Li</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 27,000 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Electric</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 6592 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 45,000</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/head-racing-holdings/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="2141"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/07/fe1-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/07/fe1-355x230.jpg 355w, ~/templatefiles/wp-content/uploads/2021/07/fe1-100x66.jpg 100w" sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="2135"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-306" data-url="https://listing.maxwheelswp.com/inventory/?type[]=hot-offer">Hot Offer</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2020-camz-ferrari-portofino-m/index.htm">2020 Camz Ferrari Portofino M</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 32,000 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Gasoline</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 3855 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 174,900</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/car-track-holdings/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="2135"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/07/g0-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/07/g0-355x230.jpg 355w, ~/templatefiles/wp-content/uploads/2021/07/g0-100x66.jpg 100w" sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="2129"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-307" data-url="https://listing.maxwheelswp.com/inventory/?type[]=urgent">Urgent</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2019-adx-alfa-romeo-giulia-gta/index.htm">2019 Adx Alfa Romeo Giulia GTA</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 50,000 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Hybrid</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 1995 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 78,000</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/car-track-holdings/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="2129"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/07/2019_mercedes-benz_a-class_sedan_a-220_f_oem_1_1600-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/07/2019_mercedes-benz_a-class_sedan_a-220_f_oem_1_1600-355x230.jpg 355w, ~/templatefiles/wp-content/uploads/2021/07/2019_mercedes-benz_a-class_sedan_a-220_f_oem_1_1600-100x66.jpg 100w"
+                                     sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="2122"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-309" data-url="https://listing.maxwheelswp.com/inventory/?type[]=sell">Sell</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2020-altra-benz-c-class-sedan/index.htm">2020 Altra Benz C-Class Sedan</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 1,300 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Hybrid</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 1800 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 24,100</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/car-track-holdings/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="2122"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/04/blue4-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/04/blue4-355x230.jpg 355w, ~/templatefiles/wp-content/uploads/2021/04/blue4-100x66.jpg 100w"
+                                     sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="1510"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-307" data-url="https://listing.maxwheelswp.com/inventory/?type[]=urgent">Urgent</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2017-audi-a4-1-4-tfsi/index.htm">2017 Audi A4 1.4 TFSI</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 17,000 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Ethanol</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 1499 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 45,000</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/grand-prix-motors/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="1510"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/03/maxresdefault-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/03/maxresdefault-355x230.jpg 355w, ~/templatefiles/wp-content/uploads/2021/03/maxresdefault-100x66.jpg 100w"
+                                     sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="221"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-307" data-url="https://listing.maxwheelswp.com/inventory/?type[]=urgent">Urgent</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-79" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=new">New</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2020-kia-telluride/index.htm">2020 Kia Telluride</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 1,000 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Diesel</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 2499 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 79,500</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/showcase-auto-sales/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="221"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/03/2019-Ford-Focus-ST-Orange-Fury-10-850x567-1-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/03/2019-Ford-Focus-ST-Orange-Fury-10-850x567-1-355x230.jpg 355w,~/templatefiles/wp-content/uploads/2021/03/2019-Ford-Focus-ST-Orange-Fury-10-850x567-1-100x66.jpg 100w, ~/templatefiles/wp-content/uploads/2021/03/2019-Ford-Focus-ST-Orange-Fury-10-850x567-1-850x550.jpg 850w"
+                                     sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="218"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-306" data-url="https://listing.maxwheelswp.com/inventory/?type[]=hot-offer">Hot Offer</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2019-ford-focus-st/index.htm">2019 Ford Focus ST</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 14,752 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Fuel</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 1799 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 32,000</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/athlon-automotives/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="218"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/03/1paNruoAncU0-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/03/1paNruoAncU0-355x230.jpg 355w, ~/templatefiles/wp-content/uploads/2021/03/1paNruoAncU0-100x66.jpg 100w"
+                                     sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="214"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-309" data-url="https://listing.maxwheelswp.com/inventory/?type[]=sell">Sell</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2017-audi-a8-3-0-tfsi-quattro/index.htm">2017 Audi A8 3.0 TFSI Quattro</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 22,000 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Electric</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 1399 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 75,800</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/athlon-automotives/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="214"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/03/1-2020-chevrolet-equinox-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/03/1-2020-chevrolet-equinox-355x230.jpg 355w,~/templatefiles/wp-content/uploads/2021/03/1-2020-chevrolet-equinox-100x66.jpg 100w"
+                                     sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="202"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-309" data-url="https://listing.maxwheelswp.com/inventory/?type[]=sell">Sell</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2017-chevrolet-equinox/index.htm">2017 Chevrolet Equinox</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 13,000 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Hybrid</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 1399 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 57,000</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/athlon-automotives/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="202"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 grid-item mygrid-type-3 ">
+                        <div class="card ad-card-1">
+                            <div class="card-image">
+
+                                <img width="355" height="230" src="~/templatefiles/wp-content/uploads/2021/03/peugeot_2008-355x230.jpg" class="img-fluid  wp-post-image" alt="" loading="lazy" srcset="~/templatefiles/wp-content/uploads/2021/03/peugeot_2008-355x230.jpg 355w, ~/templatefiles/wp-content/uploads/2021/03/peugeot_2008-100x66.jpg 100w"
+                                     sizes="(max-width: 355px) 100vw, 355px">
+                                <button class="property-tools fav-comp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Compare" data-compare-id="197"> <i class="fas fa-random"></i> </button>
+
+                                <div class="img-overlay"></div>
+                                <div class="property-labels absolute-yes">
+                                    <div class="label-badges">
+                                        <ul class="list-unstyled text-start">
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-type-309" data-url="https://listing.maxwheelswp.com/inventory/?type[]=sell">Sell</span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="mydata-attr badge badge-label-79" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=new">New</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <a class="clr-black" href="../listings/2020-kia-sportage/index.htm">2020 Kia Sportage</a>
+                                </h5>
+                                <ul class="car-amens list-inline">
+                                    <li class="list-inline-item"><i class="fas fa-road"></i> 150 (Mi)</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-gas-pump"></i> Ethanol</li>
+                                    <li class="list-inline-item text-capitalize"><i class="fas fa-oil-can"></i> 1799 (cc)</li>
+                                </ul>
+                                <div class="selling-price">
+                                    <span>$ 45,000</span>
+                                </div>
+                                <div class="details-box-btn">
+                                    <div class="seller-detial">
+                                        <a href="../dealer/joes-autohub/index.htm" class="btn btn-outline-custom btn-block">View Seller Detials</a>
+                                    </div>
+                                    <div class="mark-as-fav">
+                                        <button class="fav-prop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Favourite" data-fav-id="197"> <i class="far fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-loading-bar">
+                    <div class="my-loader-mw"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-bottom-30">
+                        <div id="listing_ajax_pagination">
+                            <ul class="pagination justify-content-start">
+                                <li class="page-item disabled"><a href="javascript:void(0);;" class="page-link" aria-label="Previous"><span aria-hidden="true">Previous</span></a></li>
+                                <li class="page-item fetch_result active" data-page-no="1"><a href="javascript:void(0);" class="page-link">1</a></li>
+                                <li class="page-item fetch_result" data-page-no="2"><a href="javascript:void(0);" class="page-link">2</a></li>
+                                <li class="page-item fetch_result" data-page-no="2"><a href="javascript:void(0);" class="page-link" aria-label="Next"><span aria-hidden="true">Next </span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<button class="scroll-top scroll-to-target" data-target="html"><span class="fas fa-angle-up"></span></button>
+<div class="modal mybode fade" id="mynewpass">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="modal-from new-my-pass" name="mynewPass" method="POST" id="mynewPass">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reset Your Password</h3>
+                    <button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="theme-row">
+                        <label>New Password<span class="req-mark">*</span></label>
+                        <span class="wrap">
+                            <input type="password" autocomplete="off" data-sanitize="trim" data-validation="length" data-validation-length="3-12" data-validation-error-msg="Please choose a password with at least 3-12 characters." name="password" class="form-control text">
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="pass_nonce" name="pass_nonce" value="678d0c4760"><input type="hidden" name="_wp_http_referer" value="/inventory/"> <input type="hidden" name="requested_user_id" value="">
+                    <button type="submit" class="btn btn-theme btn-reset-new" data-spinner-text="Processing...">Change My Password</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="check_userrole" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="modal-from new-my-pass" name="myuser_type" method="POST" id="myuser_type">
+                <div class="modal-header">
+                    <h3 class="modal-title">Select User Type</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="theme-row theme-role">
+                        <label>User Type <span class="req-mark">*</span></label>
+                        <span class="wrap">
+                            <select class="form-control theme-selects-role" data-sanitize="trim" name="usertype" data-placeholder="Select User Type" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                                <option value="dealer">Dealer</option>
+                                <option value="buyer">Buyer/Individual</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="theme-row">
+                        <label>Display Name  <i class="far fa-question-circle" data-bs-toggle="popover" data-bs-placement="top" data-content="Dealer or Buyer display name eg (Dany Motors)"></i></label>
+                        <span class="wrap">
+                            <input type="text" autocomplete="off" data-sanitize="trim" name="displayname" class="form-control text" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                        </span>
+                    </div>
+                    <span class="theme-txt"><strong>Note:</strong> Please choose your type accordingly because you can't change your type after selection.</span>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="usertype_nonce" name="usertype_nonce" value="7de46e3c06"><input type="hidden" name="_wp_http_referer" value="/inventory/"> <button type="submit" class="btn btn-theme btn-role" data-spinner-text="Processing...">Select Type</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<input type="hidden" name="is_rtl" value="0">
+<input type="hidden" name="is_curr_location" value="0">
+<div class="modal fade" id="vinModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="../wp-content/themes/maxwheels/libs/images/vin.png" alt="" class="img-fluid mx-auto d-block p-3">
+                <h3>Where is my VIN?</h3>
+                <p>The VIN is a unique identification number for your vehicle. It is 17 characters in length.</p>
+                <ol>
+                    <li>
+                        <h4>Under the windscreen wipers</h4>
+                        <p>Visible through the bottom of the windscreen</p>
+                    </li>
+                    <li>
+                        <h4>Engine Bay</h4>
+                        <p>Under the bonnet, usually at the front or back</p>
+                    </li>
+                    <li>
+                        <h4>Stamped on the chassis</h4>
+                        <p>Some utes and 4WDs, visible within a wheel arch</p>
+                    </li>
+                    <li>
+                        <h4>Inside front door</h4>
+                        <p>Open the door and look on the frame</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="scroll-top scroll-to-target" data-target="html"><span class="fas fa-angle-up"></span></button>
+<div class="modal mybode fade" id="mynewpass">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="modal-from new-my-pass" name="mynewPass" method="POST" id="mynewPass">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reset Your Password</h3>
+                    <button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="theme-row">
+                        <label>New Password<span class="req-mark">*</span></label>
+                        <span class="wrap">
+                            <input type="password" autocomplete="off" data-sanitize="trim" data-validation="length" data-validation-length="3-12" data-validation-error-msg="Please choose a password with at least 3-12 characters." name="password" class="form-control text">
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="pass_nonce" name="pass_nonce" value="678d0c4760"><input type="hidden" name="_wp_http_referer" value="/inventory/"> <input type="hidden" name="requested_user_id" value="">
+                    <button type="submit" class="btn btn-theme btn-reset-new" data-spinner-text="Processing...">Change My Password</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="check_userrole" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="modal-from new-my-pass" name="myuser_type" method="POST" id="myuser_type">
+                <div class="modal-header">
+                    <h3 class="modal-title">Select User Type</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="theme-row theme-role">
+                        <label>User Type <span class="req-mark">*</span></label>
+                        <span class="wrap">
+                            <select class="form-control theme-selects-role" data-sanitize="trim" name="usertype" data-placeholder="Select User Type" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                                <option value="dealer">Dealer</option>
+                                <option value="buyer">Buyer/Individual</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="theme-row">
+                        <label>Display Name  <i class="far fa-question-circle" data-bs-toggle="popover" data-bs-placement="top" data-content="Dealer or Buyer display name eg (Dany Motors)"></i></label>
+                        <span class="wrap">
+                            <input type="text" autocomplete="off" data-sanitize="trim" name="displayname" class="form-control text" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                        </span>
+                    </div>
+                    <span class="theme-txt"><strong>Note:</strong> Please choose your type accordingly because you can't change your type after selection.</span>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="usertype_nonce" name="usertype_nonce" value="7de46e3c06"><input type="hidden" name="_wp_http_referer" value="/inventory/"> <button type="submit" class="btn btn-theme btn-role" data-spinner-text="Processing...">Select Type</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<input type="hidden" name="is_rtl" value="0">
+<input type="hidden" name="is_curr_location" value="0">
+<div class="modal fade" id="vinModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="../wp-content/themes/maxwheels/libs/images/vin.png" alt="" class="img-fluid mx-auto d-block p-3">
+                <h3>Where is my VIN?</h3>
+                <p>The VIN is a unique identification number for your vehicle. It is 17 characters in length.</p>
+                <ol>
+                    <li>
+                        <h4>Under the windscreen wipers</h4>
+                        <p>Visible through the bottom of the windscreen</p>
+                    </li>
+                    <li>
+                        <h4>Engine Bay</h4>
+                        <p>Under the bonnet, usually at the front or back</p>
+                    </li>
+                    <li>
+                        <h4>Stamped on the chassis</h4>
+                        <p>Some utes and 4WDs, visible within a wheel arch</p>
+                    </li>
+                    <li>
+                        <h4>Inside front door</h4>
+                        <p>Open the door and look on the frame</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+

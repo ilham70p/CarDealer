@@ -1,0 +1,28 @@
+﻿@model Dealer
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-area="admin" asp-controller="Dealer" asp-action="create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="@Model.ImageFile">Dealer Image</label>
+        <input type="file" class="form-control" asp-for="@Model.ImageFile">
+        <label asp-for="@Model.Name">Dealer Name</label>
+        <input class="form-control" asp-for="@Model.Name">
+
+        <label asp-for="@Model.Email">Dealer Email</label>
+        <input class="form-control" asp-for="@Model.Email">
+        <label asp-for="@Model.Mobile">Dealer Phone</label>
+        <input class="form-control" asp-for="@Model.Mobile">
+        <label asp-for="@Model.WhatsApp">Dealer Whatsapp</label>
+        <input class="form-control" asp-for="@Model.WhatsApp">
+        <label asp-for="@Model.Location">Dealer Location</label>
+        <input class="form-control" asp-for="@Model.Location">
+        <label asp-for="@Model.Description">Dealer Description</label>
+        <input class="form-control" asp-for="@Model.Description">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

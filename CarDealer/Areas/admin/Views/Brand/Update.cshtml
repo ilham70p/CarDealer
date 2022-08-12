@@ -1,0 +1,22 @@
+﻿@model Brand
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<form asp-area="admin" asp-controller="Brand" asp-action="Update" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <img src="~/Uploads/@Model.ImageName" alt="Alternate Text" width="100px" />
+        <label asp-for="@Model.ImageFile">Blog image</label>
+        <input class="form-control" asp-for="@Model.ImageFile">
+        <label asp-for="@Model.Name">Blog title</label>
+        <input class="form-control" asp-for="@Model.Name">
+        <input asp-for="@Model.Id" hidden />
+        <input asp-for="@Model.ImageName" hidden />
+
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

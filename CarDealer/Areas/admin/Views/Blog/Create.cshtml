@@ -1,0 +1,24 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-area="admin" asp-controller="Blog" asp-action="create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="@Model.Title">Blog Image</label>
+        <input type="file" class="form-control" asp-for="@Model.ImageFile">
+        <label asp-for="@Model.Title">Blog Name</label>
+        <input class="form-control" asp-for="@Model.Title">
+        <label asp-for="@Model.Descriptoin">Blog Description</label>
+        <input class="form-control" asp-for="@Model.Descriptoin">
+        <label>Choose Category</label>
+        <select class="form-control" asp-for="@Model.BlogCategoryId" asp-items="@(new SelectList(ViewBag.Categories, "Id","Name"))">
+            <option selected>Choose Category</option>
+        </select>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

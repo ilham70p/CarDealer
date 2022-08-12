@@ -1,0 +1,73 @@
+﻿@model List<Car>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+<a class="btn btn-primary" asp-area="admin" asp-controller="Car" asp-action="create">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Model</th>
+            <th scope="col">Year</th>
+            <th scope="col">Milage</th>
+            <th scope="col">Condition</th>
+            <th scope="col">BodyType</th>
+            <th scope="col">Transmission</th>
+            <th scope="col">DriveType</th>
+            <th scope="col">ExteriorColor</th>
+            <th scope="col">interiorColor</th>
+            <th scope="col">EngineSize</th>
+            <th scope="col">FuelType</th>
+            <th scope="col">Dealer</th>
+            <th scope="col">Descrtiption</th>
+            <th scope="col">Price</th>
+            <th scope="col">qdwsadas</th>
+            <th scope="col">dsfdsfsdf</th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td><img src="~/Uploads/@item.CarImages.FirstOrDefault().ImageName" alt="Alternate Text" style="max-width:100px" /></td>
+            <td>@item.CarModel.Brand.Name</td>
+            <td>@item.CarModel.Name</td>
+            <td>@item.Year</td>
+            <td>@item.Milage</td>
+            <td>@item.Condition</td>
+            <td>@item.BodyType</td>
+            <td>@item.Transmission</td>
+            <td>@item.DriveType</td>
+            <td>@item.ExteriorColor</td>
+            <td>@item.InteriorColor</td>
+            <td>@item.EngineSize</td>
+            <td>@item.FuelType</td>
+            <td>@item.Dealer.Name</td>
+            <td>@(item.Description.Length>150? item.Description.Substring(0,150):item.Description)</td>
+            <td>@item.Price</td>
+       
+
+
+
+
+
+
+            <td><a type="button" class="btn btn-success" asp-route-id="@item.Id">Update</a></td>
+            <td><a type="button" class="btn btn-danger" asp-route-id="@item.Id">Delete</a></td>
+
+        </tr>
+        }
+
+
+    </tbody>
+</table>
+
+

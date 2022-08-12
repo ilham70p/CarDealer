@@ -1,0 +1,18 @@
+﻿@model Brand
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+<form asp-area="admin" asp-controller="Brand" asp-action="create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="@Model.Name" for="exampleInputEmail1">Brand Name</label>
+        <input asp-for="@Model.Name" class="form-control" id="exampleInputEmail1"  placeholder="Brand Name">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.ImageFile" for="exampleInputEmail1">Brand Name</label>
+        <input asp-for="@Model.ImageFile" class="form-control" id="exampleInputEmail1" placeholder="Brand Name">
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+

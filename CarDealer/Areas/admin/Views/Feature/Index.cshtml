@@ -1,0 +1,69 @@
+﻿@model List<Feature>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-primary">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ABS</th>
+            <th scope="col">AC</th>
+            <th scope="col">Radio</th>
+            <th scope="col">Locking</th>
+            <th scope="col">Immobilizer</th>
+            <th scope="col">Power Steering</th>
+            <th scope="col">Rear Sensor</th>
+            <th scope="col">Xenon</th>
+            <th scope="col">AirBag</th>
+            <th scope="col">Alloy</th>
+            <th scope="col">Assist</th>
+            <th scope="col">Cruise</th>
+            <th scope="col">Navigation</th>
+            <th scope="col">Power Window</th>
+            <th scope="col">Steer Adjust</th>
+            <th scope="col">Model</th>
+
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.ABS</td>
+            <td>@item.AirCondition</td>
+            <td>@item.Radio</td>
+            <td>@item.Locking</td>
+            <td>@item.Immobilizer</td>
+            <td>@item.PowerSteering</td>
+            <td>@item.RearSensor</td>
+            <td>@item.Xenon</td>
+            <td>@item.ABSAirBag</td>
+            <td>@item.Alloy</td>
+            <td>@item.Assist</td>
+            <td>@item.Cruise</td>
+            <td>@item.Navigation</td>
+            <td>@item.PowerWindow</td>
+            <td>@item.SteeringAdjust</td>
+            <td>@item.CarModel.Name</td>
+        
+
+
+
+
+            <td><a type="button" class="btn btn-success" asp-route-id="@item.Id">Update</a></td>
+            <td><a type="button" class="btn btn-danger" asp-route-id="@item.Id">Delete</a></td>
+
+        </tr>
+        }
+
+
+    </tbody>
+</table>

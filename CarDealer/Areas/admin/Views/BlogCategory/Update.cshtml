@@ -1,0 +1,16 @@
+﻿@model BlogCategory
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-area="admin" asp-controller="BlogCategory" asp-action="update" method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Name">Email address</label>
+        <input asp-for="@Model.Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Category Name">
+        <input asp-for="@Model.Id" hidden name="name" value="" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+

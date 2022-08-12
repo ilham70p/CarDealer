@@ -1,0 +1,22 @@
+﻿@model CarModel
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-area="admin" asp-controller="CarModel" asp-action="update" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+
+        <label asp-for="@Model.Name">Model Name</label>
+        <input class="form-control" asp-for="@Model.Name">
+
+        <label>Choose Brand</label>
+        <select class="form-control" asp-for="@Model.BrandId" asp-items="@(new SelectList(ViewBag.Brands, "Id","Name"))">
+            <option selected>Choose Brand</option>
+        </select>
+        <input class="form-control" asp-for="@Model.Id" hidden>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

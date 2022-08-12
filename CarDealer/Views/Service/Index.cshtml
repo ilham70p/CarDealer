@@ -1,0 +1,357 @@
+﻿@model List<Service>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+	
+<div data-elementor-type="wp-page" data-elementor-id="758" class="elementor elementor-758">
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-73c70b5 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="73c70b5" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="elementor-background-overlay"></div>
+        <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1b0e75e" data-id="1b0e75e" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <div class="elementor-element elementor-element-cc85bf4 elementor-widget elementor-widget-heading" data-id="cc85bf4" data-element_type="widget" data-widget_type="heading.default">
+                        <div class="elementor-widget-container">
+                            <h2 class="elementor-heading-title elementor-size-default">Services We Offer</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-10251e8d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="10251e8d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4b306bfc" data-id="4b306bfc" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <div class="elementor-element elementor-element-2212ce13 elementor-widget elementor-widget-our-services" data-id="2212ce13" data-element_type="widget" data-widget_type="our-services.default">
+                        <div class="elementor-widget-container">
+                            <section class="our-services">
+                                <div class="row">
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="eq-height col-xxl-4 col-xl-4 col-md-6 col-lg-6 col-sm-12 col-12">
+                                            <div class="our-process-cycle">
+                                                <img src="~/Uploads/@item.ImageName" alt="">
+                                                <h3>@item.Title</h3>
+                                                <p>@item.Description</p>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    <div class="eq-height col-xxl-4 col-xl-4 col-md-6 col-lg-6 col-sm-12 col-12">
+                                        <div class="our-process-cycle">
+                                            <img src="~/templatefiles/wp-content/uploads/2021/04/manual-transmission.png" alt="">
+                                            <h3>Engine &amp; Transmission</h3>
+                                            <p>As it so contrasted oh estimating car deals in instrument. Size like body some one had. Are conduct viewing boy minutes.</p>
+                                        </div>
+                                    </div>
+                                    <div class="eq-height col-xxl-4 col-xl-4 col-md-6 col-lg-6 col-sm-12 col-12">
+                                        <div class="our-process-cycle">
+                                            <img src="~/templatefiles/wp-content/uploads/2021/04/lift.png" alt="">
+                                            <h3>Wheel Alignment</h3>
+                                            <p>Does in laughter securing smallest sensible no mr hastened. As perhaps proceed in in brandon of limited unknown greatly. </p>
+                                        </div>
+                                    </div>
+                                    <div class="eq-height col-xxl-4 col-xl-4 col-md-6 col-lg-6 col-sm-12 col-12">
+                                        <div class="our-process-cycle">
+                                            <img src="~/templatefiles/wp-content/uploads/2021/04/car-wash.png" alt="">
+                                            <h3>Car Wash</h3>
+                                            <p>Consulted he eagerness unfeeling and  of the Calling nothing end fertile for venture way boy. Esteem spirit temper too.</p>
+                                        </div>
+                                    </div>
+                                    <div class="eq-height col-xxl-4 col-xl-4 col-md-6 col-lg-6 col-sm-12 col-12">
+                                        <div class="our-process-cycle">
+                                            <img src="~/templatefiles/wp-content/uploads/2021/04/air-conditioner1.png" alt="">
+                                            <h3>Heating &amp; AC Repairs</h3>
+                                            <p>Style never met and those among great. At no or september sportsmen he modification happiness attending. listening.</p>
+                                        </div>
+                                    </div>
+                                    <div class="eq-height col-xxl-4 col-xl-4 col-md-6 col-lg-6 col-sm-12 col-12">
+                                        <div class="our-process-cycle">
+                                            <img src="~/templatefiles/wp-content/uploads/2021/04/car1.png" alt="">
+                                            <h3>Parts Replacement</h3>
+                                            <p>Folly words widow one downs few age every seven. If miss part by fact he park just shew. had get projection who favourable. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-4bd1ced elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4bd1ced" data-element_type="section">
+        <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-50a1b1c2" data-id="50a1b1c2" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <div class="elementor-element elementor-element-7c6440ba elementor-widget elementor-widget-our-services2" data-id="7c6440ba" data-element_type="widget" data-widget_type="our-services2.default">
+                        <div class="elementor-widget-container">
+                            <section class="max-ser-2">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-xl-5 col-sm-12  align-self-center">
+                                        <div class="max-bodytype14-text">
+                                            <span>Why Choose Us</span>
+                                            <h3>We Provide Best Services</h3>
+                                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&#039;t anything years old will uncover many web sites still in their infancy from 45 BC, making it over 2000 years.</p>
+                                        </div>
+                                        <div class="max-bodytype14-img">
+                                            <img src="~/templatefiles/wp-content/uploads/2021/04/es7.png" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-xl-7 col-sm-12">
+                                        <div class="row">
+                                            <div class="eq-height col-xl-6 col-sm-12 col-md-6 col-12 col-lg-6">
+                                                <div class="max-bodytype14-box">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/mechanic1.png" alt="">
+                                                    <h3>Certified Mechanics</h3>
+                                                    <p>Dwelling and speedily ignorant any steepest. Admiration instrument and affronting invitation reasonably up.</p>
+                                                </div>
+                                            </div>
+                                            <div class="eq-height col-xl-6 col-sm-12 col-md-6 col-12 col-lg-6">
+                                                <div class="max-bodytype14-box">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/money.png" alt="">
+                                                    <h3>Reasonable Price</h3>
+                                                    <p>Started his hearted any civilly. So me by marianne admitted speaking. Men bred fine call ask Cease one miles.</p>
+                                                </div>
+                                            </div>
+                                            <div class="eq-height col-xl-6 col-sm-12 col-md-6 col-12 col-lg-6">
+                                                <div class="max-bodytype14-box">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/car-service.png" alt="">
+                                                    <h3>Genuine Spares Parts</h3>
+                                                    <p>Post no so what deal evil rent by real in. But her ready least set lived spite solid. September how men saw.</p>
+                                                </div>
+                                            </div>
+                                            <div class="eq-height col-xl-6 col-sm-12 col-md-6 col-12 col-lg-6">
+                                                <div class="max-bodytype14-box">
+                                                    <img src="~/templatefiles/wp-content/uploads/2021/04/24-hours.png" alt="">
+                                                    <h3> 24 Hours Support </h3>
+                                                    <p>Boy desirous families prepared gay reserved add ecstatic say. Replied joy age visitor nothing cottage.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+<button class="scroll-top scroll-to-target" data-target="html"><span class="fas fa-angle-up"></span></button>
+<div class="modal mybode fade" id="mynewpass">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="modal-from new-my-pass" name="mynewPass" method="POST" id="mynewPass">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reset Your Password</h3>
+                    <button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="theme-row">
+                        <label>New Password<span class="req-mark">*</span></label>
+                        <span class="wrap">
+                            <input type="password" autocomplete="off" data-sanitize="trim" data-validation="length" data-validation-length="3-12" data-validation-error-msg="Please choose a password with at least 3-12 characters." name="password" class="form-control text">
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="pass_nonce" name="pass_nonce" value="678d0c4760"><input type="hidden" name="_wp_http_referer" value="/services/">          <input type="hidden" name="requested_user_id" value="">
+                    <button type="submit" class="btn btn-theme btn-reset-new" data-spinner-text="Processing...">Change My Password</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div><div class="modal fade" id="check_userrole" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="modal-from new-my-pass" name="myuser_type" method="POST" id="myuser_type">
+                <div class="modal-header">
+                    <h3 class="modal-title">Select User Type</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="theme-row theme-role">
+                        <label>User Type <span class="req-mark">*</span></label>
+                        <span class="wrap">
+                            <select class="form-control theme-selects-role" data-sanitize="trim" name="usertype" data-placeholder="Select User Type" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                                <option value="dealer">Dealer</option>
+                                <option value="buyer">Buyer/Individual</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="theme-row">
+                        <label>Display Name  <i class="far fa-question-circle" data-bs-toggle="popover" data-bs-placement="top" data-content="Dealer or Buyer display name eg (Dany Motors)"></i></label>
+                        <span class="wrap">
+                            <input type="text" autocomplete="off" data-sanitize="trim" name="displayname" class="form-control text" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                        </span>
+                    </div>
+                    <span class="theme-txt"><strong>Note:</strong> Please choose your type accordingly because you can't change your type after selection.</span>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="usertype_nonce" name="usertype_nonce" value="7de46e3c06"><input type="hidden" name="_wp_http_referer" value="/services/">          <button type="submit" class="btn btn-theme btn-role" data-spinner-text="Processing...">Select Type</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="compare-toolbox" class="">
+
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-icon">
+                <i class="fas fa-random"></i>
+            </span>
+            <span class="panel-title">Compare Listings</span>
+        </div>
+        <div class="panel-body ">
+            <div class="dynamic_compare">
+                Add listings to compare.
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="is_rtl" value="0">
+<input type="hidden" name="is_curr_location" value="0">
+<div class="modal fade" id="vinModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="../wp-content/themes/maxwheels/libs/images/vin.png" alt="" class="img-fluid mx-auto d-block p-3">
+                <h3>Where is my VIN?</h3>
+                <p>The VIN is a unique identification number for your vehicle. It is 17 characters in length.</p>
+                <ol>
+                    <li>
+                        <h4>Under the windscreen wipers</h4>
+                        <p>Visible through the bottom of the windscreen</p>
+                    </li>
+                    <li>
+                        <h4>Engine Bay</h4>
+                        <p>Under the bonnet, usually at the front or back</p>
+                    </li>
+                    <li>
+                        <h4>Stamped on the chassis</h4>
+                        <p>Some utes and 4WDs, visible within a wheel arch</p>
+                    </li>
+                    <li>
+                        <h4>Inside front door</h4>
+                        <p>Open the door and look on the frame</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="scroll-top scroll-to-target" data-target="html"><span class="fas fa-angle-up"></span></button>
+<div class="modal mybode fade" id="mynewpass">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="modal-from new-my-pass" name="mynewPass" method="POST" id="mynewPass">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reset Your Password</h3>
+                    <button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="theme-row">
+                        <label>New Password<span class="req-mark">*</span></label>
+                        <span class="wrap">
+                            <input type="password" autocomplete="off" data-sanitize="trim" data-validation="length" data-validation-length="3-12" data-validation-error-msg="Please choose a password with at least 3-12 characters." name="password" class="form-control text">
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="pass_nonce" name="pass_nonce" value="678d0c4760"><input type="hidden" name="_wp_http_referer" value="/services/">          <input type="hidden" name="requested_user_id" value="">
+                    <button type="submit" class="btn btn-theme btn-reset-new" data-spinner-text="Processing...">Change My Password</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div><div class="modal fade" id="check_userrole" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="modal-from new-my-pass" name="myuser_type" method="POST" id="myuser_type">
+                <div class="modal-header">
+                    <h3 class="modal-title">Select User Type</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="theme-row theme-role">
+                        <label>User Type <span class="req-mark">*</span></label>
+                        <span class="wrap">
+                            <select class="form-control theme-selects-role" data-sanitize="trim" name="usertype" data-placeholder="Select User Type" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                                <option value="dealer">Dealer</option>
+                                <option value="buyer">Buyer/Individual</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="theme-row">
+                        <label>Display Name  <i class="far fa-question-circle" data-bs-toggle="popover" data-bs-placement="top" data-content="Dealer or Buyer display name eg (Dany Motors)"></i></label>
+                        <span class="wrap">
+                            <input type="text" autocomplete="off" data-sanitize="trim" name="displayname" class="form-control text" data-validation="required" data-validation-error-msg-required="All fields are required.">
+                        </span>
+                    </div>
+                    <span class="theme-txt"><strong>Note:</strong> Please choose your type accordingly because you can't change your type after selection.</span>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="usertype_nonce" name="usertype_nonce" value="7de46e3c06"><input type="hidden" name="_wp_http_referer" value="/services/">          <button type="submit" class="btn btn-theme btn-role" data-spinner-text="Processing...">Select Type</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="compare-toolbox" class="">
+
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-icon">
+                <i class="fas fa-random"></i>
+            </span>
+            <span class="panel-title">Compare Listings</span>
+        </div>
+        <div class="panel-body ">
+            <div class="dynamic_compare">
+                Add listings to compare.
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="is_rtl" value="0">
+<input type="hidden" name="is_curr_location" value="0">
+<div class="modal fade" id="vinModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="../wp-content/themes/maxwheels/libs/images/vin.png" alt="" class="img-fluid mx-auto d-block p-3">
+                <h3>Where is my VIN?</h3>
+                <p>The VIN is a unique identification number for your vehicle. It is 17 characters in length.</p>
+                <ol>
+                    <li>
+                        <h4>Under the windscreen wipers</h4>
+                        <p>Visible through the bottom of the windscreen</p>
+                    </li>
+                    <li>
+                        <h4>Engine Bay</h4>
+                        <p>Under the bonnet, usually at the front or back</p>
+                    </li>
+                    <li>
+                        <h4>Stamped on the chassis</h4>
+                        <p>Some utes and 4WDs, visible within a wheel arch</p>
+                    </li>
+                    <li>
+                        <h4>Inside front door</h4>
+                        <p>Open the door and look on the frame</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
