@@ -14,9 +14,7 @@
             <th scope="col">Year</th>
             <th scope="col">Milage</th>
             <th scope="col">Condition</th>
-            <th scope="col">BodyType</th>
-            <th scope="col">Transmission</th>
-            <th scope="col">DriveType</th>
+            
             <th scope="col">ExteriorColor</th>
             <th scope="col">interiorColor</th>
             <th scope="col">EngineSize</th>
@@ -24,8 +22,7 @@
             <th scope="col">Dealer</th>
             <th scope="col">Descrtiption</th>
             <th scope="col">Price</th>
-            <th scope="col">qdwsadas</th>
-            <th scope="col">dsfdsfsdf</th>
+    
 
 
 
@@ -43,9 +40,6 @@
             <td>@item.Year</td>
             <td>@item.Milage</td>
             <td>@item.Condition</td>
-            <td>@item.BodyType</td>
-            <td>@item.Transmission</td>
-            <td>@item.DriveType</td>
             <td>@item.ExteriorColor</td>
             <td>@item.InteriorColor</td>
             <td>@item.EngineSize</td>
@@ -60,8 +54,8 @@
 
 
 
-            <td><a type="button" class="btn btn-success" asp-route-id="@item.Id">Update</a></td>
-            <td><a type="button" class="btn btn-danger" asp-route-id="@item.Id">Delete</a></td>
+            <td><a type="button" asp-area="admin" asp-controller="Car" asp-action="update" class="btn btn-success" asp-route-id="@item.Id">Update</a></td>
+            <td><a type="button" asp-area="admin" asp-controller="Car" asp-action="delete" class="btn btn-danger" asp-route-id="@item.Id" onclick="return confirm('Are you sure?')">Delete</a></td>
 
         </tr>
         }

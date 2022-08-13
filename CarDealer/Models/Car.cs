@@ -39,5 +39,10 @@ namespace CarDealer.Models
         public int CarModelId { get; set; }
         public CarModel CarModel { get; set; }
         public  int Price { get; set; }
+
+        internal Car Include()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

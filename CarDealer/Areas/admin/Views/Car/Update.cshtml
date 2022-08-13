@@ -1,0 +1,104 @@
+﻿@model CarDealer.ViewModels.VmCar
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<form asp-area="admin" asp-controller="Car" asp-action="update" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+ 
+
+        <label asp-for="@Model.Images">Choose Images</label>
+        <input class="form-control" asp-for="@Model.Images">
+
+
+
+
+
+
+        <label>Choose Brand</label>
+        <select id="brandId" class="form-control" asp-items="@(new SelectList(ViewBag.Brands, "Id","Name"))">
+            <option selected>Choose brand</option>
+        </select>
+        <label>Choose Model</label>
+        <select id="ModelId" class="form-control" asp-for="@Model.Car.CarModelId" asp-items="@(new SelectList(string.Empty, "Id","Name"))">
+            <option selected>Choose Model</option>
+        </select>
+
+
+
+
+
+
+
+
+
+
+
+        <label asp-for="@Model.Car.DealerId">Choose Dealer</label>
+        <select class="form-control" asp-for="@Model.Car.DealerId" asp-items="@(new SelectList(ViewBag.Dealers, "Id","Name"))">
+            <option selected>Choose dealer</option>
+        </select>
+        <label asp-for="@Model.Car.BodyType">BodyType</label>
+        <input class="form-control" asp-for="@Model.Car.BodyType">
+        <label asp-for="@Model.Car.Transmission">Transmission</label>
+        <input class="form-control" asp-for="@Model.Car.Transmission">
+        <label asp-for="@Model.Car.Year">Year</label>
+        <input class="form-control" asp-for="@Model.Car.Year">
+        <label asp-for="@Model.Car.DriveType">Drive Type</label>
+        <input class="form-control" asp-for="@Model.Car.DriveType">
+        <label asp-for="@Model.Car.ExteriorColor">Exterior Color</label>
+        <input class="form-control" asp-for="@Model.Car.ExteriorColor">
+        <label asp-for="@Model.Car.InteriorColor">Interior Color</label>
+        <input class="form-control" asp-for="@Model.Car.InteriorColor">
+        <label asp-for="@Model.Car.Milage">Milage</label>
+        <input class="form-control" asp-for="@Model.Car.Milage">
+        <label asp-for="@Model.Car.EngineSize">Engine Size</label>
+        <input class="form-control" asp-for="@Model.Car.EngineSize">
+        <label asp-for="@Model.Car.FuelType">Fuel Type</label>
+        <input class="form-control" asp-for="@Model.Car.FuelType">
+        <label asp-for="@Model.Car.Condition">Condition</label>
+        <input class="form-control" asp-for="@Model.Car.Condition">
+
+        <label asp-for="@Model.Car.Description">Description</label>
+        <input class="form-control" asp-for="@Model.Car.Description">
+        <label asp-for="@Model.Car.Price">Price</label>
+        <input class="form-control" asp-for="@Model.Car.Price">
+
+        <input class="form-control" asp-for="@Model.Car.Id" hidden>
+        <input class="form-control" asp-for="@Model.Images[0].FileName" hidden>
+
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script src="~/Areas/admin/js/jquery-3.6.0.min.js"></script>
+<script>
+
+    $("#brandId").change(function () {
+        GetModel();
+    });
+    var GetModel = function () {
+        $.ajax({
+            url: '@Url.Action("GetModel","Car")',
+            type: 'Get',
+            data: {
+                brandId: $('#brandId').val(),
+            },
+            success: function (data) {
+                $('#ModelId').find('option').remove()
+                $(data).each(
+                    function (index, item) {
+                        $('#ModelId').append('<option value="' + item.id + '">' + item.name + '</option>')
+                    }
+                );
+            },
+            error: function () { }
+        });
+    }
+</script>
+
+

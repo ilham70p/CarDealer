@@ -65,6 +65,104 @@ namespace CarDealer.Areas.admin.Controllers
         }
 
 
+
+        public IActionResult Update(int id)
+        {
+            ViewBag.Brands = _context.Brands.ToList();
+            ViewBag.Dealers = _context.Dealers.ToList();
+            ViewBag.CarModels = _context.CarModels.ToList();
+            VmCar mydata = new VmCar { Car = _context.Cars.Find(id) };
+            return View(mydata);
+        }
+        [HttpPost]
+        public IActionResult Update(VmCar model)
+        {
+            List<CarImage> carimages = _context.CarImages.Where(a => a.CarId == model.Car.Id).ToList();
+            if (ModelState.IsValid)
+            {
+                if (model.Images!=null)
+                {
+                    foreach (var item in carimages)
+                    {
+                        string oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, "Uploads", item.ImageName);
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                        
+                        _context.CarImages.Remove(item);
+                        _context.SaveChanges();
+                        
+                    }
+                    _context.Cars.Update(model.Car);
+                    _context.SaveChanges();
+                    addImages(model.Car.Id,model.Images);
+                    return RedirectToAction("index");
+                }
+                else
+                {
+
+                    _context.Cars.Update(model.Car);
+                    _context.SaveChanges();
+                    return RedirectToAction("index");
+                }
+
+
+
+
+            }
+            else
+            {
+                return View(model);
+
+            }
+        }
+
+
+        public IActionResult Delete(int id)
+        {
+
+            Car car = _context.Cars.Find(id);
+
+            List<CarImage> myimages = _context.CarImages.Where(i => i.CarId == id).ToList();
+            foreach (var item in myimages)
+            {
+                string? oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, "Uploads", item.ImageName);
+                if (System.IO.File.Exists(oldImagePath))
+                {
+                    System.IO.File.Delete(oldImagePath);
+                }
+
+            }
+
+
+            _context.Cars.Remove(car);
+            _context.SaveChanges();
+            return RedirectToAction("index");
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public int addCar(Car mycar)
         {
             _context.Cars.Add(mycar);
@@ -100,6 +198,10 @@ namespace CarDealer.Areas.admin.Controllers
 
 
         }
+
+
+
+
 
 
 
