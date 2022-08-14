@@ -1,5 +1,6 @@
 ﻿using CarDealer.Data;
 using CarDealer.Models;
+using CarDealer.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -25,9 +26,22 @@ namespace CarDealer.Controllers
 
         }
 
-        public IActionResult ProductDetail()
+        public IActionResult ProductDetail(int id)
         {
-            return View();
+            Car cindir = _context.Cars.Include(b => b.CarModel).ThenInclude(c => c.Brand).Include(m => m.CarImages).Include(d=>d.Dealer).FirstOrDefault(b => b.Id == id);
+
+            if (cindir!=null)
+            {
+                ViewBag.Images = _context.CarImages.Where(i => i.CarId == id).ToList();
+               // Car cindir = _context.Cars.Include(b => b.CarModel).ThenInclude(c => c.Brand).Include(m => m.CarImages).FirstOrDefault(b => b.Id == id);
+
+                return View(cindir);
+            }
+            else
+            {
+                return NotFound();
+            }
+            
         }
     }
 }

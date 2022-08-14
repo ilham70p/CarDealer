@@ -615,7 +615,7 @@
                                 </div>
                                 <div class="card-body mw-featured">
                                     <h5 class="card-title">
-                                        <a class="clr-black" asp-controller="Inventory" asp-action="ProductDetail">@item.Year @item.CarModel.Brand.Name @item.CarModel.Name</a>
+                                        <a class="clr-black" asp-controller="Inventory" asp-action="ProductDetail" asp-route-id="@item.Id">@item.Year @item.CarModel.Brand.Name @item.CarModel.Name</a>
                                     </h5>
                                     <ul class="car-amens list-inline">
                                         <li class="list-inline-item"><i class="fas fa-road"></i> @item.Milage (Mi)</li>

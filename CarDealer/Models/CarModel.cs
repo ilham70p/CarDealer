@@ -14,6 +14,7 @@ namespace CarDealer.Models
         public string Name { get; set; }
         [ForeignKey("Brand")] 
         public int BrandId { get; set; }
+        [Required]
         public Brand Brand { get; set; }
         public List<Car> Cars { get; set; }
         public List<Feature> Features { get; set; }

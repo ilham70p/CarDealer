@@ -1,4 +1,4 @@
-﻿
+﻿@model Car 
 @{
     ViewData["Title"] = "ProductDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -20,7 +20,6 @@
         </div>
     </div>
 </div>
-
 <section class="mw-detail-page section-padding-50 light-bg">
     <div class="container">
         <div class="row">
@@ -31,21 +30,25 @@
                             <div class="label-badges">
                                 <ul class="list-unstyled text-start">
                                     <li class="list-inline-item">
-                                        <span class="mydata-attr badge badge-type-307" data-url="https://listing.maxwheelswp.com/inventory/?type[]=urgent">Urgent</span>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">Used</span>
+                                        <span class="mydata-attr badge badge-label-80" data-url="https://listing.maxwheelswp.com/inventory/?condition[]=used">@Model.Condition</span>
                                     </li>
                                 </ul>
                             </div>
-                        </div>		<h1>2019 Adx Alfa Romeo Giulia GTA</h1>
+                        </div>
+                        
+                            
+                            <h1>@Model.CarModel.Brand.Name @Model.CarModel.Name</h1>
+                        
+
+
+
                         <p><img src="~/templatefiles/wp-content/themes/maxwheels/libs/images/clock.png" alt="" class="img-fluid">Listed On  : Wed 27, 2022</p>
                     </div>
                     <div class="single-car-detail-4">
                         <span>Stock #2129</span>
                         <ul>
                             <li class="for-price">
-                                <div class="pricetag">$ 78,000</div>
+                                <div class="pricetag">$ @Model.Price</div>
                             </li>
                         </ul>
                     </div>
@@ -53,17 +56,19 @@
                 <div class="single-car-detail-views">
 
                     <p>
-                        <img src="~/templatefiles/wp-content/themes/maxwheels/libs/images/location.png" alt="" class="img-fluid"> 33rd Street, Long Island City, Queens, NY, USA 				<a href="//www.google.com/maps?daddr=40.7612321,-73.9259829" target="_blank"><span>View on Maps</span></a>
+                        <img src="~/templatefiles/wp-content/themes/maxwheels/libs/images/location.png" alt="" class="img-fluid"> @Model.Dealer.Location<a href="//www.google.com/maps?daddr=40.7612321,-73.9259829" target="_blank"><span>View on Maps</span></a>
                     </p>
                     <p class="color-3"><span>Views</span>: 819</p>
                 </div><div class="mw-single-flex">
                     <div class="myflex flexslider mb-0">
                         <ul class="slides">
+
+                            @foreach (var item in ViewBag.Images)
+                            {
+                                <li data-thumb="~/Uploads/@item.ImageName"> <a href="~/Uploads/@item.ImageName" data-fancybox="group">  <img class="image-fit" src="~/Uploads/@item.ImageName" alt=""> </a> </li>
+                            }
                             <li data-thumb="https://listing.maxwheelswp.com/wp-content/uploads/2021/07/g0-100x66.jpg"> <a href="~/templatefiles/wp-content/uploads/2021/07/g0.jpg" data-fancybox="group">  <img class="image-fit" src="~/templatefiles/wp-content/uploads/2021/07/g0-966x500.jpg" alt=""> </a> </li>
-                            <li data-thumb="https://listing.maxwheelswp.com/wp-content/uploads/2021/07/g1-100x66.jpg"> <a href="~/templatefiles/wp-content/uploads/2021/07/g1.jpg" data-fancybox="group">  <img class="image-fit" src="~/templatefiles/wp-content/uploads/2021/07/g1-966x500.jpg" alt=""> </a> </li>
-                            <li data-thumb="https://listing.maxwheelswp.com/wp-content/uploads/2021/07/g2-100x66.jpg"> <a href="~/templatefiles/wp-content/uploads/2021/07/g2.jpg" data-fancybox="group">  <img class="image-fit" src="~/templatefiles/wp-content/uploads/2021/07/g2-966x500.jpg" alt=""> </a> </li>
-                            <li data-thumb="https://listing.maxwheelswp.com/wp-content/uploads/2021/07/g3-100x66.jpg"> <a href="~/templatefiles/wp-content/uploads/2021/07/g3.jpg" data-fancybox="group">  <img class="image-fit" src="~/templatefiles/wp-content/uploads/2021/07/g3-966x500.jpg" alt=""> </a> </li>
-                            <li data-thumb="https://listing.maxwheelswp.com/wp-content/uploads/2021/07/g4-100x66.jpg"> <a href="~/templatefiles/wp-content/uploads/2021/07/g4.jpg" data-fancybox="group">  <img class="image-fit" src="~/templatefiles/wp-content/uploads/2021/07/g4-966x500.jpg" alt=""> </a> </li>
+   
                         </ul>
                     </div>
                 </div>
@@ -77,49 +82,49 @@
                                 <div class="mw-specs-row">
                                     <i class="flaticon-car-3"></i>
                                     <div class="area-left">Body Type</div>
-                                    <div class="area-right">Sedan</div>
+                                    <div class="area-right">@Model.BodyType</div>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-12 col-12">
                                 <div class="mw-specs-row">
                                     <i class="flaticon-fast"></i>
                                     <div class="area-left">Mileage</div>
-                                    <div class="area-right">50,000 (Mi)</div>
+                                    <div class="area-right">@Model.Milage (Mi)</div>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-12 col-12">
                                 <div class="mw-specs-row">
                                     <i class="flaticon-gearshift-1"></i>
                                     <div class="area-left">Transmission</div>
-                                    <div class="area-right">Automatic</div>
+                                    <div class="area-right">@Model.Transmission</div>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-12 col-12">
                                 <div class="mw-specs-row">
                                     <i class="flaticon-engine"></i>
                                     <div class="area-left">Engine Size</div>
-                                    <div class="area-right">1,995 (cc)</div>
+                                    <div class="area-right">@Model.EngineSize (cc)</div>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-12 col-12">
                                 <div class="mw-specs-row">
                                     <i class="flaticon-calendar-1"></i>
                                     <div class="area-left">Year</div>
-                                    <div class="area-right">2019</div>
+                                    <div class="area-right">@Model.Year</div>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-12 col-12">
                                 <div class="mw-specs-row">
                                     <i class="flaticon-fuel-station"></i>
                                     <div class="area-left">Fuel Type</div>
-                                    <div class="area-right">Hybrid</div>
+                                    <div class="area-right">@Model.FuelType</div>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-12 col-12">
                                 <div class="mw-specs-row">
                                     <i class="flaticon-steering-wheel-2"></i>
                                     <div class="area-left">Drive</div>
-                                    <div class="area-right">AWD</div>
+                                    <div class="area-right">@Model.DriveType</div>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-12 col-12">
@@ -127,21 +132,21 @@
                                 <div class="mw-specs-row">
                                     <i class="flaticon-settings"></i>
                                     <div class="area-left">Condition</div>
-                                    <div class="area-right">Used</div>
+                                    <div class="area-right">@Model.Condition</div>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-12 col-12">
                                 <div class="mw-specs-row">
                                     <i class="flaticon-rgb"></i>
                                     <div class="area-left">Exterior Color</div>
-                                    <div class="area-right">Infrared Red</div>
+                                    <div class="area-right">@Model.ExteriorColor</div>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-12 col-12">
                                 <div class="mw-specs-row border-0">
                                     <i class="flaticon-paint-1"></i>
                                     <div class="area-left">Interior Color</div>
-                                    <div class="area-right">Beige</div>
+                                    <div class="area-right">@Model.InteriorColor</div>
                                 </div>
                             </div>
 
@@ -161,79 +166,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="widget-seprator listing-features clearfix">
-                        <div class="widget-seprator-heading">
-                            <h3 class="sec-title">Features</h3>
-                        </div>
-                        <ul class="list-unstyled">
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>ABS</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Air Bags</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Air Conditioning</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Alloy Rims</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>AM/FM Radio</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Brake Assist</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Central Locking</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Cruise Control</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Immobilizer Key</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Navigation System</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Power Steering</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Power Windows</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Rear Parking Sensor</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Steering Adjustment</span>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <i class="fas fa-check-circle"></i> <span>Xenon Headlights</span>
-                            </li>
-                        </ul>
                     </div>
                     <div class="widget-seprator">
                         <div class="widget-seprator-heading">
                             <h3 class="sec-title">Description</h3>
                         </div>
                         <div class="post-excerpt post-desc">
-                            <p>2019 Alfa Romeo Giulia Veloce now available at Alfa Romeo Middelburg. 2.0L Turbocharged producing 206 kW &amp; 400Nm Torque, Front and rear park distance control, Front collision warning, reverse camera, heated leather seats and steering wheel, Bluetooth, Android Auto &amp; Apple car play and many many more.</p>
+                            <p> @Model.Description</p>
                             <ul>
                                 <li><strong>Power</strong> &#8211; 136 kW  6500 rpm</li>
                                 <li><strong>Torque</strong> &#8211; 230 Nm  4500 rpm</li>
@@ -415,12 +354,12 @@
                     <div class="single-widget">
                         <div class="prof-style-4 prof-style-5">
                             <div class="d-flex align-items-center">
-                                <a class="user-thumb user-thumb-md flex-shrink-0 me-3" href="../../dealer/car-track-holdings/index.htm"><img src="~/templatefiles/wp-content/uploads/2021/02/cartrack.png" alt="" class="img-fluid"></a>
+                                <a class="user-thumb user-thumb-md flex-shrink-0 me-3" href="../../dealer/car-track-holdings/index.htm"><img src="~/Uploads/@Model.Dealer.ImageName" alt="" class="img-fluid"></a>
                                 <div>
                                     <div class="p4-ratings">
                                         <span class="ratings"> <i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star-half-alt color"></i><span class="rating-counter"> (1 Reviews)</span></span>
                                     </div>
-                                    <h3><a class="clr-black" href="../../dealer/car-track-holdings/index.htm">Car Track Holdings</a></h3>
+                                    <h3><a class="clr-black" href="../../dealer/car-track-holdings/index.htm">@Model.Dealer.Name</a></h3>
                                     <p class="review_time">Member Since: 1 year </p>
                                 </div>
                             </div>
@@ -428,12 +367,12 @@
                             <div class="prof4-extra-details text-start ">
                                 <ul>
                                     <li>
-                                        <img class="inline-mw-prof-details img-fluid" src="~/templatefiles/wp-content/themes/maxwheels/libs/images/location-pin.png" alt=""><span class="mw-overflow mw-ellipsis">1690 US-165, England, AR 72046, USA</span>
+                                        <img class="inline-mw-prof-details img-fluid" src="~/templatefiles/wp-content/themes/maxwheels/libs/images/location-pin.png" alt=""><span class="mw-overflow mw-ellipsis">@Model.Dealer.Location</span>
 
                                         <a class="explore-nearby" href="https://www.google.com/maps?daddr=34.54906820760968,-91.91512672763672" target="_blank">Get Directions</a>
                                     </li>
                                     <li>
-                                        <img class="inline-mw-prof-details img-fluid" src="~/templatefiles/wp-content/themes/maxwheels/libs/images/phone-call.png" alt=""> <span class="mw-show-phone " data-tel="01632960972"><a href="javascript:void(0)">Show Number</a></span>
+                                        <img class="inline-mw-prof-details img-fluid" src="~/templatefiles/wp-content/themes/maxwheels/libs/images/phone-call.png" alt=""> <span class="mw-show-phone " data-tel="@Model.Dealer.Mobile"><a href="javascript:void(0)">Show Number</a></span>
                                     </li>
                                 </ul>
 

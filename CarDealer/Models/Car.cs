@@ -36,6 +36,7 @@ namespace CarDealer.Models
         public List<CarImage> CarImages { get; set; }
 
         [ForeignKey("CarModel")]
+        [Required]
         public int CarModelId { get; set; }
         public CarModel CarModel { get; set; }
         public  int Price { get; set; }
