@@ -152,17 +152,6 @@ namespace CarDealer.Areas.admin.Controllers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         public int addCar(Car mycar)
         {
             _context.Cars.Add(mycar);
